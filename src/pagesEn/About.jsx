@@ -216,9 +216,7 @@ function About() {
               <h1 className="t_m_1 t_1 txt-ac fw-r neulis mob_ani me_1">vision</h1>
               <span className="body-m t_2 t_m_2">( a )</span>
               <div className="body-m as_text_1 t_m_3">
-                <span className="apprael_ani ls_s  delay-1">As a trusted partner in discovering each client's unique beauty,</span>
-                <span className="apprael_ani ls_s delay-2">we aim to grow alongside our team and become a great company</span>
-                <span className="apprael_ani ls_s delay-3">that writes a new chapter in K-beauty.</span>
+                <span className="apprael_ani ls_s delay-1">As a trusted partner in discovering each client's unique beauty, we aim to grow alongside our team and become a great company that writes a new chapter in K-beauty.</span>
               </div>
             </div>
           </div>
@@ -252,7 +250,7 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Message</h1>
             </div>
             <div className="as_text_2 ani_x">
-              <span className="signiture signature_name apprael head-m">We Woon Me</span>
+              <img className="signiture" src="/img/about_4_sig_2.png" alt="We Woon Me's signature"/>
               <ul>
                 <li className="body-m apprael_ani delay-1 ls_s">
                   <strong className="fw-b">Company Name</strong><p>ID Beauty Co., Ltd.</p>
@@ -274,8 +272,7 @@ function About() {
             <h1 className="display-l fw-l t_m_2 apprael mob_ani ani_x me_1 number_count">1988</h1>
             <div className="body-m as_text_1 t_m_1 ani_x">
               <span className="apprael_ani ls_s delay-1">Founded in 1988 by two stylists at a small salon called 'Miss Parma',</span>
-              <span className="apprael_ani ls_s delay-2">id HAIR has grown into one of South Korea's</span>
-              <span className="apprael_ani ls_s delay-3">leading professional hair brands.</span>
+              <span className="apprael_ani ls_s delay-2">id HAIR has grown into one of South Korea's leading professional hair brands.</span>
             </div>
           </div>
 
@@ -344,7 +341,7 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Brand</h1>
             </div>
             <div className="body-m as_text_2 t_m_3 ani_x">
-              <span className="apprael_ani ls_s delay-1">We strategically expand our brand portfolio to meet diverse market needs</span>
+              <span className="apprael_ani ls_s delay-1">We strategically expand our brand portfolio to meet<br/>diverse market needs</span>
               <span className="apprael_ani ls_s delay-2">and strengthen our position in the market.</span>
             </div>
           </div>

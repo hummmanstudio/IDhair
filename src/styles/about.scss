@@ -215,7 +215,7 @@
       }
       .as_text{display:flex;  position: absolute; top:100%;
         img{width:11.9231vw; margin-top: 2.0513vw;}
-        .magin_text{margin: 3.6538vw 10.7692vw 0 2.5641vw;}
+        .magin_text{margin: 2.5641vw 10.7692vw 0 2.5641vw;}
         .span_text{margin-top: 2.5641vw;}
       }
     }
@@ -569,7 +569,9 @@
 
 // Keep English copy within the existing About page layout.
 .page_about[lang="en"] {
-  .signature_name { flex: none; font-style: italic; line-height: 1.2; }
+  @media (min-width: 1025px) {
+    .as_1 .as_text h1.t_m_2 { left: calc(38.6vw - 40px); }
+  }
 
   @media (max-width: 1024px) {
     .as_3 .as_text_1,
