@@ -25,6 +25,12 @@ export const defaultPageMetadata = {
 };
 
 export const localizedPageMetadata = {
+  '/en/academy': {
+    title: 'id ACADEMY | id HAIR',
+    description: 'Discover id HAIR Academy’s professional hair education, hands-on curriculum, expert instructors and student stories.',
+    siteName: 'id HAIR',
+    language: 'en',
+  },
   '/en/about': {
     title: 'ABOUT id HAIR | id HAIR',
     description: 'A trendsetting premium hair salon, id HAIR',
