@@ -215,7 +215,7 @@
       }
       .as_text{display:flex;  position: absolute; top:100%;
         img{width:11.9231vw; margin-top: 2.0513vw;}
-        .magin_text{margin: 3.6538vw 10.7692vw 0 2.5641vw;}
+        .magin_text{margin: 2.5641vw 10.7692vw 0 2.5641vw;}
         .span_text{margin-top: 2.5641vw;}
       }
     }
@@ -565,4 +565,28 @@
   }
 
   
+}
+
+// Keep English copy within the existing About page layout.
+.page_about[lang="en"] {
+  @media (min-width: 1025px) {
+    .as_1 .as_text h1.t_m_2 { left: calc(38.6vw - 40px); }
+  }
+
+  @media (max-width: 1024px) {
+    .as_3 .as_text_1,
+    .as_4 .as_4_2 .as_text_1,
+    .as_4 .as_4_3 .as_text_1,
+    .as_7 .as_text_2 { max-width: 88.889vw; }
+
+    .as_4 .as_4_2 .as_text_1,
+    .as_4 .as_4_3 .as_text_1 { margin-inline: auto; }
+
+    .as_4 .as_4_1 .as_text_2 ul li strong { flex: none; white-space: normal; }
+    .as_4 .as_4_1 .as_text_2 ul li p { min-width: 0; }
+    .as_7 .as_7_2 ul li { width: 30%; }
+    .as_7 .as_7_2 ul li > span { display: block; min-height: 5.1em; }
+    .as_8 .as_text { width: 88.889vw; }
+    .as_8 .as_8_2 .span_text { white-space: normal; }
+  }
 }

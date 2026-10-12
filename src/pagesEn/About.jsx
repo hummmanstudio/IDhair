@@ -129,6 +129,7 @@ function About() {
   return (
     <main
       className="page_about"
+      lang="en"
       style={{
         //width: "600vw",
         
@@ -169,10 +170,10 @@ function About() {
           </div>
           <div className="as_1_text_2 head-s ani_x">
             <span className=" delay-1">
-            행복을 디자인합니다.
+            We design happiness.
             </span>
             <span className=" delay-3">
-            행복 스타일리스트.
+            Happiness stylists.
             </span>
             </div>
           <div className="scroll_indicator">
@@ -186,14 +187,14 @@ function About() {
             <h1 className="as_title fw-r t_m_2 me_2">Story</h1>
           </div>
           <div className="as_text_2 head-s ani_x t_m_3">
-            <b className="apprael_ani ls_s delay-1">아이디헤어(id HAIR)의 'id'는<br className="mob"/> 당신의 정체성, 바로 'identity'를 뜻합니다.</b>
+            <b className="apprael_ani ls_s delay-1">The 'id' in id HAIR stands for<br className="mob"/> your identity.</b>
             <span className="apprael_ani ls_s delay-2">
-              우리는 고객 한 분 한 분이 가진 고유한 뷰티 아이덴티티를 섬세하게<br/>
-              디자인하여, 세상에 단 하나뿐인 '가장 나다운 아름다움'을 완성합니다.
+              We thoughtfully shape each client's unique beauty identity,<br/>
+              creating a one-of-a-kind look that is truly their own.
             </span>
             <span className="apprael_ani ls_s delay-3">
-              아이디헤어는 언제나 당신이 가진 고유한 색깔을 지지하며,<br/>
-              가장 당신다운 모습으로 빛나는 매 순간을 응원하겠습니다.</span>
+              At id HAIR, we celebrate your unique individuality<br/>
+              and every moment you shine as your true self.</span>
           </div>
         </section>
         <section className="as_3">
@@ -215,9 +216,7 @@ function About() {
               <h1 className="t_m_1 t_1 txt-ac fw-r neulis mob_ani me_1">vision</h1>
               <span className="body-m t_2 t_m_2">( a )</span>
               <div className="body-m as_text_1 t_m_3">
-                <span className="apprael_ani ls_s  delay-1">고객의 고유한 아름다움을 찾아주는 든든한 뷰티 파트너로서,</span>
-                <span className="apprael_ani ls_s delay-2">구성원과 함께 동반 성장하며 K-뷰티의 새로운 역사를 쓰는</span>
-                <span className="apprael_ani ls_s delay-3">위대한 기업으로 도약하겠습니다.</span>
+                <span className="apprael_ani ls_s delay-1">As a trusted partner in discovering each client's unique beauty, we aim to grow alongside our team and become a great company that writes a new chapter in K-beauty.</span>
               </div>
             </div>
           </div>
@@ -230,9 +229,9 @@ function About() {
               <h1 className="t_m_1 t_1 txt-ac fw-r neulis  mob_ani me_1">mission</h1>
               <span className="body-m t_2  t_m_2">( b )</span>
               <div className="body-m as_text_1 t_m_3">
-                <span className="apprael_ani ls_s delay-1">단순한 헤어 디자인 기술을 넘어 고객의 삶에</span>
-                <span className="apprael_ani ls_s delay-2">깊은 감동을 선사하는 '행복 스타일리스트'로서,</span>
-                <span className="apprael_ani ls_s delay-3">모든 사람들과 함께 성공하고 꿈을 이뤄갑니다.</span>
+                <span className="apprael_ani ls_s delay-1">Beyond the art of hair design, we are 'happiness stylists'</span>
+                <span className="apprael_ani ls_s delay-2">who bring meaningful joy to our clients' lives.</span>
+                <span className="apprael_ani ls_s delay-3">Together, we achieve success and make dreams come true.</span>
               </div>
             </div>
           </div>
@@ -251,16 +250,16 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Message</h1>
             </div>
             <div className="as_text_2 ani_x">
-              <img className="signiture" src="/img/about_4_sig_2.png"/>
+              <img className="signiture" src="/img/about_4_sig_2.png" alt="We Woon Me's signature"/>
               <ul>
                 <li className="body-m apprael_ani delay-1 ls_s">
-                  <strong className="fw-b">Company Name</strong><p>주식회사 아이디뷰티</p>
+                  <strong className="fw-b">Company Name</strong><p>ID Beauty Co., Ltd.</p>
                 </li>
                 <li className="body-m apprael_ani delay-2 ls_s">
-                  <strong className="fw-b">Establishment Date</strong><p>1988년, 1호점 오픈</p>
+                  <strong className="fw-b">Establishment Date</strong><p>First salon opened in 1988</p>
                 </li>
                 <li className="body-m apprael_ani delay-3 ls_s">
-                  <strong className="fw-b">Founder</strong><p>위운미 (We Woon Me)</p>
+                  <strong className="fw-b">Founder</strong><p>We Woon Me</p>
                 </li>
               </ul>
             </div>
@@ -272,9 +271,8 @@ function About() {
           <div className="as_4_2 t_m_w">
             <h1 className="display-l fw-l t_m_2 apprael mob_ani ani_x me_1 number_count">1988</h1>
             <div className="body-m as_text_1 t_m_1 ani_x">
-              <span className="apprael_ani ls_s delay-1">1988년 작은 미용실 '미스파마'에서 두 명의 스타일리스트로</span>
-              <span className="apprael_ani ls_s delay-2">시작한 아이디헤어는, 이제 대한민국을 대표하는</span>
-              <span className="apprael_ani ls_s delay-3">프로페셔널 헤어 브랜드로 성장했습니다. </span>
+              <span className="apprael_ani ls_s delay-1">Founded in 1988 by two stylists at a small salon called 'Miss Parma',</span>
+              <span className="apprael_ani ls_s delay-2">id HAIR has grown into one of South Korea's leading professional hair brands.</span>
             </div>
           </div>
 
@@ -287,22 +285,17 @@ function About() {
 
 
 
-            {/*<div className="body-m as_text_1 t_m_1 ani_x pc">
-              <span className="apprael_ani ls_s delay-1">지난 39년간 우리는 단순한 기술자를 넘어 고객의 행복을 디자인하는</span>
-              <span className="apprael_ani ls_s delay-2">'행복 스타일리스트'로 달려왔습니다. '함께 성공하는 것'이라는 변치 않는</span>
-              <span className="apprael_ani ls_s delay-3">사명 아래, 앞으로도 고객과 동료, 사회와 함께 아름다움의 여정을 이어가겠습니다.</span>
-            </div>*/}
             <div className="body-m as_text_1 t_m_1 ani_x pc">
-              <span className="apprael_ani ls_s delay-1">지난 39년간 우리는 단순한 기술자를 넘어 고객의 행복을 디자인하는</span>
-              <span className="apprael_ani ls_s delay-2">'행복 스타일리스트'로 달려왔습니다. </span>
-              <span className="apprael_ani ls_s delay-3">'함께 성공하는 것'이라는 변치 않는 사명 아래,</span>
-              <span className="apprael_ani ls_s delay-3">앞으로도 고객과 동료, 사회와 함께 아름다움의 여정을 이어가겠습니다.</span>
+              <span className="apprael_ani ls_s delay-1">For 39 years, we have gone beyond technical expertise</span>
+              <span className="apprael_ani ls_s delay-2">to become 'happiness stylists' who design happiness for our clients.</span>
+              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission to 'succeed together',</span>
+              <span className="apprael_ani ls_s delay-3">we continue our journey in beauty with clients, colleagues and society.</span>
             </div>
             <div className="body-m as_text_1 t_m_1 ani_x mob">
-              <span className="apprael_ani ls_s delay-1">지난 39년간 우리는 단순한 기술자를 넘어</span>
-              <span className="apprael_ani ls_s delay-2">고객의 행복을 디자인하는 '행복 스타일리스트'로 달려왔습니다. </span>
-              <span className="apprael_ani ls_s delay-3">'함께 성공하는 것'이라는 변치 않는 사명 아래, 앞으로도</span>
-              <span className="apprael_ani ls_s delay-3">고객과 동료, 사회와 함께 아름다움의 여정을 이어가겠습니다.</span>
+              <span className="apprael_ani ls_s delay-1">For 39 years, we have gone beyond technical expertise</span>
+              <span className="apprael_ani ls_s delay-2">to become 'happiness stylists' who design happiness for our clients.</span>
+              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission to 'succeed together',</span>
+              <span className="apprael_ani ls_s delay-3">we continue our journey in beauty with clients, colleagues and society.</span>
             </div>
             
           </div>
@@ -325,13 +318,13 @@ function About() {
             <div className="as_6_text">
               <img src="/img/icon_heart.svg"/>
               <span className="head-s pc">
-                수십 년간 꾸준히 이어온 장기적인 아동 후원과 나눔을 통해, <br/>
-                단순한 뷰티 브랜드를 넘어 사회적 책임을 다하는 진정성 있는 동반자로 함께합니다.
+                Through decades of sustained child sponsorship and giving,<br/>
+                we go beyond beauty to be a committed partner in social responsibility.
               </span>
               <span className="head-s mob">
-                수십 년간 꾸준히 이어온 장기적인 아동 <br/> 
-                후원과 나눔을 통해, 단순한 뷰티 브랜드를<br/>
-                넘어 사회적 책임을 다하는 진정성 있는<br/>동반자로 함께합니다.
+                Through decades of sustained<br/>
+                child sponsorship and giving, we go<br/>
+                beyond beauty to be a committed<br/>partner in social responsibility.
               </span>
             </div>
             <div className="as_6_bg_w">
@@ -348,28 +341,28 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Brand</h1>
             </div>
             <div className="body-m as_text_2 t_m_3 ani_x">
-              <span className="apprael_ani ls_s delay-1">시장의 다양한 니즈에 대응하기 위해 전략적으로 </span>
-              <span className="apprael_ani ls_s delay-2">브랜드 포트폴리오를 확장하며 시장 지배력을 강화하고 있습니다.</span>
+              <span className="apprael_ani ls_s delay-1">We strategically expand our brand portfolio to meet<br/>diverse market needs</span>
+              <span className="apprael_ani ls_s delay-2">and strengthen our position in the market.</span>
             </div>
           </div>
           <div className="as_7_2 t_m_w">
             <ul>
               <li className="body-m  ani_x t_m_4">
-                <span className="body-m apprael_ani delay-1 ls_s">전국 매장수 (2026년)</span>
+                <span className="body-m apprael_ani delay-1 ls_s">Salons Nationwide (2026)</span>
                 <div className="b-t b-1 b-c-white b-delay-2">
                   <h1 className="display-l fw-l apprael">112</h1>
-                  <p className="body-m">개</p>
+                  <p className="body-m">salons</p>
                 </div>
               </li>
               <li className="body-m  ani_x t_m_5">
-                <span className="body-m apprael_ani delay-2 ls_s">10년전 대비 매장 증가율</span>
+                <span className="body-m apprael_ani delay-2 ls_s">Salon Growth vs. 10 Years Ago</span>
                 <div className="b-t b-1 b-c-white b-delay-2">
                   <h1 className="display-l fw-l apprael">5</h1>
-                  <p className="body-m">배</p>
+                  <p className="body-m">times</p>
                 </div>
               </li>
               <li className="body-m  ani_x t_m_6">
-                <span className="body-m apprael_ani delay-3 ls_s">10년간 폐점률</span>
+                <span className="body-m apprael_ani delay-3 ls_s">10-Year Closure Rate</span>
                 <div className="b-t b-1 b-c-white b-delay-2">
                   <h1 className="display-l fw-l apprael">0</h1>
                   <p className="body-m">%</p>
@@ -387,8 +380,8 @@ function About() {
               <div className="as_text apprael_ani ls_s delay-1  body-m t_m_2">
               <img className="t_m_2" src="/img/logo_w.png"/>
               <span className="span_text">
-                대중적 접근성과 전문적인 서비스를 균형 있게 갖춘 핵심 브랜드로,<br/>
-                누구나 쉽게 다가갈 수 있는 전문성과 신뢰를 제공합니다.
+                Our core brand balances accessibility with professional service,<br/>
+                offering expertise and trust that everyone can rely on.
               </span>
             </div>
             </div>
@@ -404,8 +397,8 @@ function About() {
               </div>
               <div className="as_text body-m">
                 <img className="t_m_2" src="/img/as_7_4_3.png"/>
-                <span className="magin_text t_m_3">&#123; 세컨드 하이엔드 브랜드 &#125;</span>
-                <span className="span_text ">한남동과 유엔빌리지에 위치한 프리미엄 살롱으로,<br/>셀럽과 VIP 고객을 중심으로 브랜드의 고급 이미지를 강화합니다.</span>
+                <span className="magin_text t_m_3">&#123; Second High-End Brand &#125;</span>
+                <span className="span_text ">Premium salons in Hannam-dong and UN Village,<br/>strengthening our luxury image among celebrities and VIP clients.</span>
               </div>
             </div>
             

@@ -6,7 +6,7 @@ const INTRO_IMAGE_REVEAL_DURATION = 900;
 const INTRO_OPEN_DELAY = 1000;
 const INTRO_TEXT_START_SCALE = 0.4;
 
-export default function useMainIntroAnimation(sceneRef, ready) {
+export default function useMainIntroAnimation(sceneRef) {
   useLayoutEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
@@ -19,7 +19,7 @@ export default function useMainIntroAnimation(sceneRef, ready) {
   }, []);
 
   useEffect(() => {
-    if (!ready || !sceneRef.current) return;
+    if (!sceneRef.current) return;
 
     const scene = sceneRef.current;
     const panel = scene.querySelector(".main_story_panel_1");
@@ -46,15 +46,10 @@ export default function useMainIntroAnimation(sceneRef, ready) {
     }
 
     async function start() {
-      const images = [...scene.closest(".page_main").querySelectorAll("img")];
-      await Promise.all([
-        document.readyState === "complete" ? Promise.resolve() : waitForEvent(window, ["load"]),
-        document.fonts.ready,
-        ...images.map(async (image) => {
-          if (!image.complete) await waitForEvent(image, ["load", "error"]);
-          if (!signal.aborted) await image.decode().catch(() => {});
-        }),
-      ]);
+      // Start as soon as the opening image is ready. News, gallery images,
+      // other story panels and fonts must not hold the first image back.
+      if (!image.complete) await waitForEvent(image, ["load", "error"]);
+      if (!signal.aborted) await image.decode().catch(() => {});
       if (signal.aborted) return;
 
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -108,5 +103,5 @@ export default function useMainIntroAnimation(sceneRef, ready) {
       text.classList.remove("active");
       panel.classList.remove("open");
     };
-  }, [sceneRef, ready]);
+  }, [sceneRef]);
 }

@@ -25,6 +25,7 @@
   ],
   "rewrites": [
     { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/en/about", "destination": "/en/about/index.html" },
     { "source": "/academy", "destination": "/academy/index.html" },
     { "source": "/recruit", "destination": "/recruit/index.html" },
     { "source": "/magazine", "destination": "/magazine/index.html" },
