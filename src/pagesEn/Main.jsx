@@ -58,7 +58,11 @@ function MainStoryPanel({ story, index, isMobile }) {
           {story.mobileBackground && (
             <source media="(max-width: 1024px)" srcSet={story.mobileBackground} />
           )}
-          <img src={story.background} alt={story.backgroundAlt} />
+          <img
+            src={story.background}
+            alt={story.backgroundAlt}
+            fetchPriority={index === 0 ? "high" : "auto"}
+          />
         </picture>
       </div>
       <div className="main_story_shade" aria-hidden="true" />
@@ -106,9 +110,7 @@ function MainStoryPanel({ story, index, isMobile }) {
 function Main() {
   useAboutSmoothScroll({ verticalOnly: true });
   const sceneRef = useRef(null);
-  const [newsLoaded, setNewsLoaded] = useState(false);
-  const [galleryLoaded, setGalleryLoaded] = useState(false);
-  useMainIntroAnimation(sceneRef, newsLoaded && galleryLoaded);
+  useMainIntroAnimation(sceneRef);
   const newsRevealRef = useRef(null);
   const [isMobileCards, setIsMobileCards] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -149,9 +151,6 @@ function Main() {
       })
       .catch((error) => {
         console.error("Failed to load latest news posts on main", error);
-      })
-      .finally(() => {
-        if (isMounted) setNewsLoaded(true);
       });
 
     return () => {
@@ -178,9 +177,6 @@ function Main() {
       })
       .catch((error) => {
         console.error("Failed to load featured gallery post on main", error);
-      })
-      .finally(() => {
-        if (isMounted) setGalleryLoaded(true);
       });
 
     return () => {
@@ -210,8 +206,8 @@ function Main() {
       shade.style.opacity = String(blurProgress * 0.12);
 
       cards.forEach((card, index) => {
-        const start = 0.32 + index * 0.075;
-        const end = 0.64 + index * 0.055;
+        const start = 0.24 + index * 0.06;
+        const end = 0.52 + index * 0.045;
         const cardProgress = reducedMotion.matches
           ? progress > start ? 1 : 0
           : easeOutCubic(getRangeProgress(progress, start, end));
