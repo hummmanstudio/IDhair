@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import "../styles/academy.scss";
+import "../styles/academy-en.scss";
 
 function Academy() {
   useEffect(() => {
@@ -345,7 +346,7 @@ function Academy() {
   }, []);
 
   return (
-    <main className="page_academy">
+    <main className="page_academy page_academy--en" lang="en">
       <section className="ac_1 bg-gray-1">
         <div className="ac_1_bg_height"></div>
         <div className="ac_video_track">
@@ -373,14 +374,14 @@ function Academy() {
         </div>
         <div className="ac_1_2">
           <article className="body-m txt-white ani">
-            <h1 className="head-l apprael_ani ls_s delay-1">온/오프라인을<br/>아우르는 독자적 교육 프로그램</h1>
+            <h1 className="head-l apprael_ani ls_s delay-1">An original training program,<br/>online and in person</h1>
             <span className="mg apprael_ani ls_s delay-2">
-              id STYLE WORK 디플로마는 2년 4개월간 <br className="mob"/>총 56개의 헤어 작품을 이수하면<br className="pc"/>
-              정식 자격을 부여하는 <br className="mob"/>미용업계 최초의 체계적 헤어 기술 프로그램입니다.
+              The id STYLE WORK diploma is the hair industry’s first structured hair-technique program.
+              Students earn formal certification after completing 56 hair designs over two years and four months.
             </span>
             <span className="apprael_ani ls_s delay-3">
-              온라인 플랫폼 &lt;seezier&gt;를 통해 최신 살롱 스타일까지 <br className="mob"/>학습할 수 있으며,<br className="pc"/>
-              각 매장에서 현장 실전 감각을 익히는 맞춤형 <br className="mob"/>과정인 id skill mastery까지 함께 제공됩니다.
+              Our online platform, seezier, offers training in the latest salon styles.
+              We also offer id skill mastery, a tailored program that develops hands-on skills in each salon.
             </span>
           </article>
         </div>
@@ -399,9 +400,9 @@ function Academy() {
                   <h1>style work</h1>
                 </div>
                 <div className="l_b">
-                  <b>/    스타일 워크</b>
+                  <b>/ Style Work</b>
                   <span>
-                    id HAIR만의 커트 교육 시스템으로, 모질·두상·얼굴형에 따른 총 56가지 커트 스타일을 14단계, 2년 4개월의 과정​으로 세분화하여 기초부터 응용까지 단계적으로 트레이닝합니다.
+                    id HAIR’s signature haircutting system covers 56 styles tailored to hair texture, head shape and face shape. Across 14 stages over two years and four months, students progress from foundational skills to advanced applications.
                   </span>
                 </div>
               </li>
@@ -411,9 +412,9 @@ function Academy() {
                   <h1>start work</h1>
                 </div>
                 <div className="l_b">
-                  <b>/    스타트 워크</b>
+                  <b>/ Start Work</b>
                   <span>
-                    스타일워크에 앞서 살롱 구성원으로서 필요한 기본 자세와 책임감, 고객과 동료를 대하는 태도를 배우며 미용인으로서의 기본 소양과 마인드를 갖추는 기초 교육 과정입니다.
+                    Before Style Work, this foundation course builds the mindset and professional skills needed in a salon. Students learn responsibility, professional conduct and how to work with clients and colleagues.
                   </span>
                 </div>
               </li>
@@ -423,9 +424,9 @@ function Academy() {
                   <h1>salon work</h1>
                 </div>
                 <div className="l_b">
-                  <b>/    살롱 워크</b>
+                  <b>/ Salon Work</b>
                   <span>
-                    id HAIR 내부에서 풍부한 현장 경험과 노하우를 가진 디자이너와 다양한 분야의 외부 전문 디자이너를 초청하여, 실제 살롱에서 직접 활용하고 있는 커트·펌·염색 등 다양한 테크닉과 시술 노하우를 강의 또는 세미나 형태로 공유합니다.
+                    Experienced id HAIR stylists and guest specialists share techniques and practical expertise through lectures and seminars. Sessions cover cutting, perming, coloring and other skills used in real salon work.
                   </span>
                 </div>
               </li>
@@ -436,9 +437,9 @@ function Academy() {
                   <h1>technic work</h1>
                 </div>
                 <div className="l_b">
-                  <b>/    테크닉 워크</b>
+                  <b>/ Technic Work</b>
                   <span>
-                    펌과 염색을 중심으로 살롱에서 자주 활용되는 8가지 펌 테크닉과 16가지 염색 테크닉 강의를 통해 기본 원리부터 시술 과정, 약제 활용, 디자인별 테크닉까지 단계적으로 학습합니다.
+                    Learn eight perm techniques and 16 coloring techniques commonly used in salons. Step-by-step lessons cover core principles, treatment procedures, product use and techniques for different designs.
                   </span>
                 </div>
               </li>
@@ -457,7 +458,7 @@ function Academy() {
             
             <div className="left">
               
-              <h1 className="title b-b b-2 body-m fw-sb">트렌드와 현장 경험을 연결한 교육을 통해<br/>디자이너의 성장과 경쟁력을 함께 완성합니다.</h1>
+              <h1 className="title b-b b-2 body-m fw-sb">Training that connects trends with salon experience,<br/>helping stylists grow and stay competitive.</h1>
               <div className="img_w">
                 <div className="number_count"><b>01</b><span>/ 07</span></div>
                 <div className="img">
@@ -472,49 +473,49 @@ function Academy() {
                 </div>
                 <ul>
                   <li>
-                    <span>id HAIR 교육총괄이사 &amp; 이대역점 대표</span>
-                    <span>아이디헤어 교육프로그램 ‘스타일워크’ 기획·개발 및 창시</span>
-                    <span>대한민국 최대 헤어쇼 ‘The Show’ / ‘Super Live’ 메인 디렉터</span>
-                    <span>일본 오사카 ‘미도스지 컬렉션’ 대한민국 최초 대표 메인 디렉터</span>
-                    <span>2011~2022년 비달사순 런던 마스터클래스 10년 연속 참가</span>
+                    <span>id HAIR Education Director and representative of the Ewha Womans University Station Branch</span>
+                    <span>Creator and developer of id HAIR’s Style Work training program</span>
+                    <span>Lead director of Korea’s largest hair shows, The Show and Super Live</span>
+                    <span>First Korean representative to serve as lead director of the Midosuji Collection in Osaka, Japan</span>
+                    <span>Attended Vidal Sassoon London masterclasses for 10 consecutive years between 2011 and 2022</span>
                   </li>
                   <li>
-                    <span>id HAIR Academy 총괄 운영</span>
-                    <span>헤어 디자인 커리큘럼 기획 및 개발</span>
-                    <span>사내 교육 / 신입·주니어 디자이너 육성 프로그램 기획 및 운영</span>
-                    <span>교육 콘텐츠 및 실무 교육 시스템 구축</span>
+                    <span>Oversees the operation of id HAIR Academy</span>
+                    <span>Plans and develops hair-design curricula</span>
+                    <span>Plans and manages in-house training and development programs for new and junior stylists</span>
+                    <span>Develops educational content and practical training systems</span>
                   </li>
                   <li>
-                    <span>id HAIR 세미나 및 헤어쇼 관련 기획·연출·운영 총괄</span>
-                    <span>스타일워크 개발 참여</span>
-                    <span>id HAIR Academy 운영 시스템 개발 및 운영</span>
-                    <span>2025년, 2018년 OSAKA 아시아 뷰티 엑스포 연출 참여</span>
-                    <span>2018년 「THE SHOW」 헤어쇼 무대 메인 디자이너 참여</span>
+                    <span>Oversees planning, direction and operation of id HAIR seminars and hair shows</span>
+                    <span>Contributed to the development of Style Work</span>
+                    <span>Develops and manages id HAIR Academy’s operating systems</span>
+                    <span>Participated in directing the Asia Beauty Expo in Osaka in 2018 and 2025</span>
+                    <span>Lead stage stylist at The Show hair show in 2018</span>
                   </li>
                   <li>
-                    <span>스타일워크 커트 교육 담당</span>
-                    <span>파트너 기본기 및 실무 테크닉 역량 강화 교육</span>
-                    <span>커트 교육 프로그램 운영 및 파트너 성장 지원</span>
+                    <span>Teaches Style Work haircutting courses</span>
+                    <span>Strengthens salon partners’ foundational skills and practical techniques</span>
+                    <span>Runs haircutting programs and supports salon partners’ professional growth</span>
                   </li>
                   <li>
-                    <span>오송 아카데미 코어팀 강사 및 아카데미 운영·관리</span>
-                    <span>서울·경기권 외 지역 매장 커뮤니케이션 및 교육 지원</span>
-                    <span>홍대·오송 아카데미 스타일워크 전 작품 강의</span>
-                    <span>컴플레인 최소화 노하우 교육 운영</span>
+                    <span>Core-team instructor and academy operations manager at Osong Academy</span>
+                    <span>Provides communication and training support for salons outside Seoul and Gyeonggi</span>
+                    <span>Teaches the full Style Work curriculum at Hongdae and Osong Academies</span>
+                    <span>Runs practical training on minimizing client complaints</span>
                   </li>
                   <li>
-                    <span>스타일워크 커트 기술 및 디자인 교육 담당</span>
-                    <span>파트너 및 디자이너 교육 프로그램 기획·운영</span>
-                    <span>SEEZIER 온라인 아카데미 콘텐츠 제작 및 운영</span>
-                    <span>살롱워크·세미나 등 디자이너 교육 프로그램 기획 및 운영</span>
-                    <span>건국대학교 교육대학원 미용교육학과</span>
+                    <span>Teaches Style Work haircutting techniques and design</span>
+                    <span>Plans and manages training programs for salon partners and stylists</span>
+                    <span>Creates and manages SEEZIER online academy content</span>
+                    <span>Plans and runs stylist education, including Salon Work and seminars</span>
+                    <span>Department of Beauty Education, Graduate School of Education, Konkuk University</span>
                   </li>
                   <li>
-                    <span>스타일워크 여성 레이어드펌·커트 테크닉 및 디자인 교육</span>
-                    <span>파트너 역량 및 성장 지원</span>
-                    <span>현 id HAIR 아카데미 코어팀 강사</span>
-                    <span>해외 펌 세미나 교육 및 해외 인플루언서 교육 진행</span>
-                    <span>전 id HAIR 수석실장 및 중국 청두 한국계 헤어살롱 실장</span>
+                    <span>Teaches women’s layered-perm and haircutting techniques and design in Style Work</span>
+                    <span>Supports salon partners’ skills and professional growth</span>
+                    <span>Current core-team instructor at id HAIR Academy</span>
+                    <span>Conducts overseas perm seminars and training for international influencers</span>
+                    <span>Former head stylist at id HAIR and salon manager at a Korean hair salon in Chengdu, China</span>
                   </li>
 
                 </ul>
@@ -524,32 +525,32 @@ function Academy() {
             <ul className="right">
               <li>
                 <h4 className="body-l fw-b">Head of id Academy</h4>
-                <span className="head-l">안정준 이사</span>
+                <span className="head-l">Ahn Jeong-jun</span>
               </li>
               <li>
                 <h4 className="body-l fw-b">id Academy Director</h4>
-                <span className="head-l">이은혜 부장</span>
+                <span className="head-l">Lee Eun-hye</span>
               </li>
               <li>
                 <h4 className="body-l fw-b">id Academy Main Instructor</h4>
-                <span className="head-l">윤훈희 팀장</span>
+                <span className="head-l">Yoon Hun-hee</span>
               </li>
               <li>
                 <h4 className="body-l fw-b">id Academy Instructor</h4>
-                <span className="head-l">진영준 강사</span>
+                <span className="head-l">Jin Yeong-jun</span>
               </li>
               <li>
                 <h4 className="body-l fw-b">id Academy Instructor</h4>
-                <span className="head-l">최연승 강사</span>
+                <span className="head-l">Choi Yeon-seung</span>
               </li>
 
               <li>
                 <h4 className="body-l fw-b">id Academy Instructor</h4>
-                <span className="head-l">이설아 강사</span>
+                <span className="head-l">Lee Seol-a</span>
               </li>
               <li>
                 <h4 className="body-l fw-b">id Academy Instructor</h4>
-                <span className="head-l">제인 강사</span>
+                <span className="head-l">Jane</span>
               </li>
             </ul>
           </div>
@@ -566,11 +567,9 @@ function Academy() {
               <img src="/img/ac_3_1.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">이 유 나&nbsp;<p className="body-s"> 님</p></h4><span className="caption-m txt-gray">과천점</span></div>
+                <div className="top"><h4 className="body-l">Lee Yu-na</h4><span className="caption-m txt-gray">Gwacheon Branch</span></div>
                 <div className="bottom body-s">
-                  기초부터 차근차근 배울 수 있어 좋았고, <br/>
-                  다양한 작품을 만들며 여러 기술을 익힐 수 있었습니다.<br/>
-                  감사합니다.
+                  I enjoyed learning step by step from the basics. Creating a variety of designs helped me develop different techniques. Thank you!
                 </div>
               </div>
             </li>
@@ -578,11 +577,9 @@ function Academy() {
               <img src="/img/ac_3_2.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l"> 양 지 원&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">광교중앙점</span></div>
+                <div className="top"><h4 className="body-l">Yang Ji-won</h4><span className="caption-m txt-gray">Gwanggyo Jungang Branch</span></div>
                 <div className="bottom body-s">
-                  아카데미 교육을 들으면서 회차마다 각 선생님들마다<br/> 
-                  다른 스타일의 컷트교육을 해주셔서 다양한 기술을<br/> 
-                  배울 수 있어서 좋았습니다.                 
+                  Each academy session introduced a different instructor’s approach to haircutting. I loved being able to learn such a wide range of techniques.
                 </div>
               </div>
             </li>
@@ -590,12 +587,10 @@ function Academy() {
               <img src="/img/ac_3_3.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">김 혜 미&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">동탄목동점</span></div>
+                <div className="top"><h4 className="body-l">Kim Hye-mi</h4><span className="caption-m txt-gray">Dongtan Mokdong Branch</span></div>
                 <div className="bottom body-s">
                   
-                  기본기의 중요성을 다시 한번 느낄 수 있었고,<br/>
-                  배운 내용을 실제로 친구 머리에 적용해 볼 수 있어 <br/>
-                  더욱 뜻깊은 교육이었습니다.
+                  The course reminded me how important the fundamentals are. Being able to try what I learned on a friend’s hair made the experience even more meaningful.
                 </div>
               </div>
             </li>
@@ -603,12 +598,9 @@ function Academy() {
               <img src="/img/ac_3_4.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">황 은 설&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">올림픽둔촌점</span></div>
+                <div className="top"><h4 className="body-l">Hwang Eun-seol</h4><span className="caption-m txt-gray">Olympic Dunchon Branch</span></div>
                 <div className="bottom body-s">
-                  교육이 체계적으로 구성되어 있어서 이해하기 쉬웠고,<br/>
-                  디테일한 부분까지 꼼꼼하게 배울 수 있어 좋았습니다.<br/>
-                  살롱에서 바로 적용할 수 있는 실전 노하우를 많이<br/>
-                  알려주셔서 도움이 많이 됐습니다.
+                  The well-structured course was easy to follow, and I appreciated the attention to detail. The instructors shared plenty of practical tips I could use in the salon right away.
                 </div>
               </div>
             </li>
@@ -616,10 +608,9 @@ function Academy() {
               <img src="/img/ac_3_5.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">김 준 우&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">용인수지점</span></div>
+                <div className="top"><h4 className="body-l">Kim Jun-woo</h4><span className="caption-m txt-gray">Yongin Suji Branch</span></div>
                 <div className="bottom body-s">
-                  아카데미 교육을 통해 기본기를 더욱 탄탄하게 다질 수 있었고<br/>
-                  실무에 바로 적용할 수 있는 기술과 노하우들을 많이 배웠습니다!
+                  Academy training helped me build stronger fundamentals. I also learned many techniques and practical tips I could apply to my work immediately!
                 </div>
               </div>
             </li>
@@ -627,12 +618,9 @@ function Academy() {
               <img src="/img/ac_3_6.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">이 채 원&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">원마운트</span></div>
+                <div className="top"><h4 className="body-l">Lee Chae-won</h4><span className="caption-m txt-gray">One Mount Branch</span></div>
                 <div className="bottom body-s">
-                  강사님들의 꼼꼼하고 세심한 지도 덕분에<br/>
-                  처음 배우는 사람도 쉽게 이해할 수 있었으며,<br/>
-                  커트의 기본기와 최신 헤어 트렌드까지 함께 배울 수 있어<br/>
-                  더욱 흥미롭고 유익한 교육이었습니다. ✨
+                  The instructors’ thoughtful, detailed guidance made the lessons easy to understand, even for beginners. Learning both haircutting fundamentals and the latest hair trends made the course engaging and rewarding. ✨
                 </div>
               </div>
             </li>
@@ -640,17 +628,15 @@ function Academy() {
               <img src="/img/ac_3_7.png" alt="" />
               <div className="txt_w">
                 <div className="edge_w"><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/><img src="/img/edge.svg"/></div>
-                <div className="top"><h4 className="body-l">김 연 지&nbsp; <p className="body-s"> 님</p></h4><span className="caption-m txt-gray">지축점</span></div>
+                <div className="top"><h4 className="body-l">Kim Yeon-ji</h4><span className="caption-m txt-gray">Jichuk Branch</span></div>
                 <div className="bottom body-s">
-                  기본기부터 실무 기술까지 체계적으로 배울 수 있었으며,<br/>
-                  다양한 원장님과 점장님을 만나 미용인으로서의 자세와<br/>
-                  방향성을 되돌아볼 수 있는 뜻깊은 교육이었습니다. ✨
+                  I learned in a structured way, from the basics to practical salon skills. Meeting salon owners and managers also gave me a valuable opportunity to reflect on my attitude and direction as a hair professional. ✨
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <div className="mob_caption mob txt-gray">인물을 터치해 주세요 &#61;&#41;</div>
+        <div className="mob_caption mob txt-gray">Tap a person to read their story =)</div>
       </section>
       <div className="section_name head-l fw-sb">
         <ul>

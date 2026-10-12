@@ -27,7 +27,37 @@ const emptyStore = {
 const naverMapSearchKeyword = "id헤어";
 const naverMapDefaultUrl = `https://map.naver.com/p/search/${encodeURIComponent(naverMapSearchKeyword)}`;
 
+const salonCopy = {
+  ko: {
+    regions: { seoul: "서울", gyeonggi: "경기", local: "지방", atelier: "아틀리에" },
+    search: "주소 or 지점명 검색",
+    searchLabel: "매장 검색",
+    close: "살롱 닫기",
+    atelier: "아틀리에 매장 보기",
+    nearby: "가까운 매장찾기",
+    empty: "검색결과 없음",
+    reservation: "네이버 예약",
+    image: "이미지",
+    previousImage: "이전 매장 이미지",
+    nextImage: "다음 매장 이미지",
+  },
+  en: {
+    regions: { seoul: "Seoul", gyeonggi: "Gyeonggi", local: "Other Regions", atelier: "Atelier" },
+    search: "Search by address or salon name",
+    searchLabel: "Search salon",
+    close: "Close salon popup",
+    atelier: "View Atelier salons",
+    nearby: "Find a Nearby Salon",
+    empty: "No salons found",
+    reservation: "Book on Naver",
+    image: "image",
+    previousImage: "Previous salon image",
+    nextImage: "Next salon image",
+  },
+};
+
 function Salon({ open, onClose, language = "ko" }) {
+  const copy = salonCopy[language] ?? salonCopy.ko;
   const [salonRegions, setSalonRegions] = useState(defaultSalonRegions);
   const [selectedRegionId, setSelectedRegionId] = useState(defaultSalonRegions[0].id);
   const [selectedStoreId, setSelectedStoreId] = useState("");
@@ -203,8 +233,8 @@ function Salon({ open, onClose, language = "ko" }) {
   }, [open, onClose]);
 
   return (
-    <div className={`salon_popup ${open ? "active" : ""}`} aria-hidden={!open}>
-      <button type="button" className="salon_close" onClick={onClose} aria-label="Close salon popup">
+    <div className={`salon_popup ${open ? "active" : ""}`} aria-hidden={!open} lang={language}>
+      <button type="button" className="salon_close" onClick={onClose} aria-label={copy.close}>
         <span></span><span></span>
       </button>
       <div className="salon_popup_page" role="dialog" aria-modal="true" aria-label="Salon" data-lenis-prevent>
@@ -215,12 +245,13 @@ function Salon({ open, onClose, language = "ko" }) {
               <input
                 className="head-m fw-sm"
                 type="text"
-                placeholder="주소 or 지점명 검색"
+                placeholder={copy.search}
+                aria-label={copy.search}
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
                 onKeyDown={handleSearchKeyDown}
               />
-              <button type="button" aria-label="Search salon" onClick={handleSearchSubmit}><img src="/img/icon_search.svg" alt="" /></button>
+              <button type="button" aria-label={copy.searchLabel} onClick={handleSearchSubmit}><img src="/img/icon_search.svg" alt="" /></button>
             </div>
           </div>
         </div>
@@ -231,7 +262,7 @@ function Salon({ open, onClose, language = "ko" }) {
                 {salonRegions.filter((region) => region.id !== "atelier").map((region) => (
                   <li key={region.id} className={!hasSubmittedSearch && region.id === selectedRegion.id ? "active" : ""}>
                     <button type="button" className="head-m" onClick={() => handleRegionClick(region)}>
-                      {region.name}
+                      {copy.regions[region.id] ?? region.name}
                     </button>
                   </li>
                 ))}
@@ -240,12 +271,12 @@ function Salon({ open, onClose, language = "ko" }) {
                 type="button"
                 className={`arc_logo ${!hasSubmittedSearch && selectedRegion.id === "atelier" ? "active" : ""}`}
                 onClick={handleAtelierClick}
-                aria-label="아틀리에 매장 보기"
+                aria-label={copy.atelier}
                 aria-pressed={!hasSubmittedSearch && selectedRegion.id === "atelier"}
               >
                 <img src="/img/arc.png" alt="" />
               </button>
-              <a className="find_store" href={naverMapDefaultUrl} target="_blank" rel="noreferrer"><img src="/img/icon_find.png"/><span className="fw-sb body-l">가까운 매장찾기</span></a>
+              <a className="find_store" href={naverMapDefaultUrl} target="_blank" rel="noreferrer"><img src="/img/icon_find.png" alt=""/><span className="fw-sb body-l">{copy.nearby}</span></a>
             </div>
 
             <div className="b_l_r head-s">
@@ -264,7 +295,7 @@ function Salon({ open, onClose, language = "ko" }) {
                   </li>
                 ))}
                 {displayedStores.length === 0 && (
-                  <li className="empty body-m">검색결과 없음</li>
+                  <li className="empty body-m">{copy.empty}</li>
                 )}
               </ul>
             </div>
@@ -292,12 +323,12 @@ function Salon({ open, onClose, language = "ko" }) {
                   >
                     {detailImages.map((image, index) => (
                       <SwiperSlide key={`${image}-${index}`}>
-                        <img src={image} alt={`${detailStore.name} 이미지 ${index + 1}`} />
+                        <img src={image} alt={`${detailStore.name} ${copy.image} ${index + 1}`} />
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                  <button type="button" className="cursor_left" onClick={handlePrevImage} aria-label="Previous salon image"></button>
-                  <button type="button" className="cursor_right" onClick={handleNextImage} aria-label="Next salon image"></button>
+                  <button type="button" className="cursor_left" onClick={handlePrevImage} aria-label={copy.previousImage}></button>
+                  <button type="button" className="cursor_right" onClick={handleNextImage} aria-label={copy.nextImage}></button>
                 </div>
               )}
               {hasDetailStore && (
@@ -323,12 +354,12 @@ function Salon({ open, onClose, language = "ko" }) {
                     </dl>
                   </div>
                   <div className="store_links ">
-                    <a href={detailStore.instagramUrl} target="_blank" className="insta" rel="noreferrer">
-                      <img src="/img/icon_instagram_w.svg"/>
+                    <a href={detailStore.instagramUrl} target="_blank" className="insta" rel="noreferrer" aria-label="Instagram">
+                      <img src="/img/icon_instagram_w.svg" alt=""/>
                     </a>
                     <a href={detailStore.reservationUrl} target="_blank" rel="noreferrer" className="naver">
-                      <img src="/img/icon_naver.svg"/>
-                      <span className="body-m">네이버 예약</span>
+                      <img src="/img/icon_naver.svg" alt=""/>
+                      <span className="body-m">{copy.reservation}</span>
                     </a>
                   </div>
                 </div>
