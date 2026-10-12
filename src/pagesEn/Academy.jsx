@@ -458,7 +458,7 @@ function Academy() {
             
             <div className="left">
               
-              <h1 className="title b-b b-2 body-m fw-sb">Training that connects trends with salon experience,<br/>helping stylists grow and stay competitive.</h1>
+              <h1 className="title b-b b-2 body-m fw-sb">Training that connects trends with salon experience, helping stylists grow and stay competitive.</h1>
               <div className="img_w">
                 <div className="number_count"><b>01</b><span>/ 07</span></div>
                 <div className="img">

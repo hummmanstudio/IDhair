@@ -5,13 +5,13 @@
     white-space: normal;
 
     h1 { line-height: 1.35; }
-    > span { max-width: 720px; font-size: clamp(18px, 1.3vw, 22px); line-height: 1.65; }
+    > span { max-width: 720px; font-size: 15px; line-height: 1.65; }
   }
 
   .ac_1 .ac_1_3 .flex .right li .l_b {
     gap: 20px;
     b { flex: 0 0 100px; white-space: normal; }
-    span { flex: 1; width: auto; min-width: 0; word-break: normal; }
+    span { flex: 1; width: auto; min-width: 0; font-size: 15px; word-break: normal; }
   }
 
   .ac_2 .flex_w .flex {
@@ -27,7 +27,8 @@
           overscroll-behavior: contain;
           scrollbar-width: thin;
           li { gap: 10px; }
-          span { font-size: clamp(16px, 1.05vw, 18px); line-height: 1.5; word-break: normal; }
+          span { font-size: 15px; line-height: 1.5; word-break: normal; }
+          li:nth-child(7) span { font-size: 14px; }
         }
       }
     }
@@ -44,9 +45,9 @@
       .top {
         flex-wrap: wrap; gap: 6px 12px;
         h4 { font-size: 22px; line-height: 1.35; }
-        > span { font-size: 14px; line-height: 1.5; }
+        > span { font-size: 15px; line-height: 1.5; }
       }
-      .bottom { white-space: normal; font-size: 16px; line-height: 1.6; }
+      .bottom { white-space: normal; font-size: 15px; line-height: 1.6; }
     }
     &:nth-child(3), &:nth-child(7) {
       .txt_w { left: auto; right: 0; }
@@ -56,13 +57,13 @@
   @media (max-width: 1024px) {
     .ac_1 .ac_1_2 article {
       padding-inline: 24px;
-      > span { font-size: 16px; line-height: 1.6; }
+      > span { font-size: 15px; line-height: 1.6; }
       .mg { margin: 32px 0 24px; }
     }
     .ac_1 .ac_1_3 .flex .right li .l_b {
       gap: 12px;
       b { flex: none; font-size: clamp(12px, 3.056vw, 14px); }
-      span { flex: none; width: 100%; font-size: clamp(12px, 3.056vw, 14px); }
+      span { flex: none; width: 100%; font-size: 15px; }
     }
     .ac_2 .flex_w .flex {
       .left {
@@ -74,7 +75,7 @@
           overscroll-behavior: contain;
           scrollbar-width: thin;
           li { font-size: 14px; gap: 10px; }
-          span { font-size: 14px; line-height: 1.5; }
+          span { font-size: 15px; line-height: 1.5; }
         }
       }
       .right li {
