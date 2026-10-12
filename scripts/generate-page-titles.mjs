@@ -1,5 +1,5 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { pageTitles } from '../src/data/pageTitles.js';
+import { getPageMetadata, pageTitles } from '../src/data/pageTitles.js';
 
 const dist = new URL('../dist/', import.meta.url);
 const template = await readFile(new URL('index.html', dist), 'utf8');
@@ -13,11 +13,19 @@ for (const [path, title] of Object.entries(pageTitles)) {
   if (path === '/') continue;
   const directory = new URL(`${path.slice(1)}/`, dist);
   await mkdir(directory, { recursive: true });
-  const html = stripHomeOnly(template)
+  let html = stripHomeOnly(template)
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/(<meta property="og:title" content=")[^"]*("\s*\/?>)/, `$1${title}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*("\s*\/?>)/, `$1https://www.idhair.com${path}$2`)
     .replace(/(<link rel="canonical" href=")[^"]*("\s*\/?>)/, `$1https://www.idhair.com${path}$2`);
+  const metadata = getPageMetadata(path);
+  if (metadata) {
+    html = html
+      .replace(/(<html\s+lang=")[^"]*(")/, `$1${metadata.language}$2`)
+      .replace(/(<meta name="description" content=")[^"]*("\s*\/?>)/, `$1${metadata.description}$2`)
+      .replace(/(<meta property="og:description" content=")[^"]*("\s*\/?>)/, `$1${metadata.description}$2`)
+      .replace(/(<meta property="og:site_name" content=")[^"]*("\s*\/?>)/, `$1${metadata.siteName}$2`);
+  }
   await writeFile(new URL('index.html', directory), html);
 }
 

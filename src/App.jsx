@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { getPageTitle, notFoundTitles } from "./data/pageTitles";
+import { defaultPageMetadata, getPageMetadata, getPageTitle, notFoundTitles } from "./data/pageTitles";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, matchRoutes, createRoutesFromElements } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -73,6 +73,18 @@ function AppRoutes() {
     setSalonOpen(open);
     if (!open && isSalonPage) navigate(isEnglishPage ? "/en" : "/", { replace: true });
   };
+
+  useEffect(() => {
+    const metadata = getPageMetadata(location.pathname) || defaultPageMetadata;
+    document.documentElement.lang = metadata.language;
+    [
+      ['meta[name="description"]', metadata.description],
+      ['meta[property="og:description"]', metadata.description],
+      ['meta[property="og:site_name"]', metadata.siteName],
+    ].forEach(([selector, content]) => {
+      document.querySelector(selector)?.setAttribute("content", content);
+    });
+  }, [location.pathname]);
 
   useEffect(() => {
     if (isAdminRoute) return;

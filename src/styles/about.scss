@@ -566,3 +566,25 @@
 
   
 }
+
+// Keep English copy within the existing About page layout.
+.page_about[lang="en"] {
+  .signature_name { flex: none; font-style: italic; line-height: 1.2; }
+
+  @media (max-width: 1024px) {
+    .as_3 .as_text_1,
+    .as_4 .as_4_2 .as_text_1,
+    .as_4 .as_4_3 .as_text_1,
+    .as_7 .as_text_2 { max-width: 88.889vw; }
+
+    .as_4 .as_4_2 .as_text_1,
+    .as_4 .as_4_3 .as_text_1 { margin-inline: auto; }
+
+    .as_4 .as_4_1 .as_text_2 ul li strong { flex: none; white-space: normal; }
+    .as_4 .as_4_1 .as_text_2 ul li p { min-width: 0; }
+    .as_7 .as_7_2 ul li { width: 30%; }
+    .as_7 .as_7_2 ul li > span { display: block; min-height: 5.1em; }
+    .as_8 .as_text { width: 88.889vw; }
+    .as_8 .as_8_2 .span_text { white-space: normal; }
+  }
+}
