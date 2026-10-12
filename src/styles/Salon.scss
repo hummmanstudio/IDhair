@@ -228,10 +228,11 @@
           }
         }
 
-        .b_l_r{width:50%; min-width:0; padding:2.949vw 8px 2.949vw 1.282vw; display:flex; flex-direction:column; min-height:0;
+        .b_l_r{width:50%; min-width:0; padding:2.949vw 4px 2.949vw 1.282vw; display:flex; flex-direction:column; min-height:0;
           ul{height:100%; min-height:0; min-width:0; padding-right:8px; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; display:flex; gap:clamp(8px, .769vw, 12px); flex-direction:column;
-            scrollbar-width:thin; scrollbar-color:rgb(255 255 255 / .25) transparent;
-            &::-webkit-scrollbar{width:4px;}
+            scrollbar-width:auto; scrollbar-color:auto;
+            @supports not selector(::-webkit-scrollbar){scrollbar-width:thin; scrollbar-color:rgb(255 255 255 / .25) transparent;}
+            &::-webkit-scrollbar{width:2px;}
             &::-webkit-scrollbar-thumb{border-radius:10px; background-color:rgb(255, 255, 255, .25);}
             &::-webkit-scrollbar-track{background:rgba(220, 20, 60, 0);}
             li{
@@ -335,7 +336,7 @@
             &::before{height:calc(100% - 3.333vw); top:3.333vw; bottom:unset;}
             ol{padding:clamp(24px, 6.667vw, 32px) 12px clamp(24px, 6.667vw, 32px) 0;}
 
-            .find_store{position:absolute; width:max-content; max-width:calc(100vw - 8.888vw); aspect-ratio:auto; height:clamp(32px, 8.889vw, 40px); bottom:unset; padding:0 12px; top:-44px; gap:8px;
+            .find_store{position:absolute; width:max-content; max-width:calc(100vw - 8.888vw); aspect-ratio:auto; height:clamp(32px, 8.889vw, 40px); bottom:unset; padding:0 12px; top:-52px; gap:8px;
               img{width:16px; height:16px; flex-shrink:0;}
               .body-l{font-size:12px; white-space:nowrap;}
             }
@@ -348,7 +349,7 @@
             }
           }
 
-          .b_l_r{width:calc((100% / 3) * 2); padding:16px 8px 0 clamp(16px, 5.556vw, 24px);
+          .b_l_r{width:calc((100% / 3) * 2); padding:16px 4px 0 clamp(16px, 5.556vw, 24px);
             ul{gap:8px;}
           }
         }
