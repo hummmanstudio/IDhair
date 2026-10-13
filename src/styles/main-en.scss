@@ -1,0 +1,34 @@
+.page_main.page_main--en {
+  .main_story { height: var(--main-story-height); }
+  .main_news_reveal { height: var(--main-news-height); }
+  .main_collection_fake { height: 160svh; }
+
+  .main_story .main_story_panel.main_story_panel_1 .main_story_copy {
+    // Reveal each phrase locally so Feel Better need not wait for a viewport-wide wipe.
+    clip-path: none;
+    letter-spacing: 0;
+    transition: none;
+    > span {
+      clip-path: inset(0 100% 0 0);
+      letter-spacing: -.6vw;
+      transition: clip-path 1.7s cubic-bezier(.25, .46, .45, .94), letter-spacing 1.7s cubic-bezier(.25, .46, .45, .94);
+      &:nth-child(2) { transition-delay: .18s; }
+    }
+    &.active > span {
+      clip-path: inset(0);
+      letter-spacing: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .main_story .main_story_panel.main_story_panel_1 .main_story_copy {
+      > span { transition-duration: 0s; transition-delay: 0s; }
+    }
+    .main_story .main_story_panel {
+      will-change: auto;
+      .main_story_notice, .main_story_scroll { transition: none; }
+      .main_story_card, .main_story_background img { will-change: auto; }
+    }
+    .main_news_reveal .main_news_panel { will-change: auto; }
+  }
+}
