@@ -6,7 +6,12 @@ const INTRO_IMAGE_REVEAL_DURATION = 900;
 const INTRO_OPEN_DELAY = 1000;
 const INTRO_TEXT_START_SCALE = 0.4;
 
-export default function useMainIntroAnimation(sceneRef) {
+export default function useMainIntroAnimation(sceneRef, {
+  scaleDuration = INTRO_SCALE_DURATION,
+  revealDuration = INTRO_IMAGE_REVEAL_DURATION,
+  openDelay = INTRO_OPEN_DELAY,
+  scaleEasing = "ease",
+} = {}) {
   useLayoutEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
@@ -59,7 +64,7 @@ export default function useMainIntroAnimation(sceneRef) {
           { clipPath: "inset(-2px)" },
         ],
         {
-          duration: reducedMotion ? 0 : INTRO_IMAGE_REVEAL_DURATION,
+          duration: reducedMotion ? 0 : revealDuration,
           easing: "cubic-bezier(0.22, 1, 0.36, 1)",
           fill: "forwards",
         },
@@ -72,7 +77,7 @@ export default function useMainIntroAnimation(sceneRef) {
 
       scaleAnimation = picture.animate(
         [{ transform: "scale(0.3)" }, { transform: "scale(1)" }],
-        { duration: reducedMotion ? 0 : INTRO_SCALE_DURATION, easing: "ease", fill: "forwards" },
+        { duration: reducedMotion ? 0 : scaleDuration, easing: scaleEasing, fill: "forwards" },
       );
       function checkScale() {
         if (signal.aborted) return;
@@ -84,7 +89,7 @@ export default function useMainIntroAnimation(sceneRef) {
           window.dispatchEvent(new Event("main-intro-text-start"));
           openTimer = window.setTimeout(() => {
             if (!signal.aborted) panel.classList.add("open");
-          }, INTRO_OPEN_DELAY);
+          }, openDelay);
           return;
         }
         frameId = window.requestAnimationFrame(checkScale);
@@ -103,5 +108,5 @@ export default function useMainIntroAnimation(sceneRef) {
       text.classList.remove("active");
       panel.classList.remove("open");
     };
-  }, [sceneRef]);
+  }, [sceneRef, scaleDuration, revealDuration, openDelay, scaleEasing]);
 }

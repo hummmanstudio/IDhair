@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import TransitionLink from "../components/TransitionLink";
 import MainNotice from "../components/MainNotice";
-import useAboutSmoothScroll from "../lib/useAboutSmoothScroll";
+import useEnglishMainScroll from "../lib/useEnglishMainScroll";
 import useMainIntroAnimation from "../lib/useMainIntroAnimation";
+import { ENGLISH_MAIN_MOTION, ENGLISH_MAIN_INTRO, easeInOutCubic, getEnglishNewsTimeline } from "../lib/englishMainMotion";
 import {
   fetchGalleryPosts,
   fetchNewsPosts,
@@ -10,6 +11,7 @@ import {
   getNewsImageUrl,
 } from "../lib/sanityNewsEn";
 import "../styles/main.scss";
+import "../styles/main-en.scss";
 
 const MAIN_STORIES = [
   {
@@ -108,9 +110,9 @@ function MainStoryPanel({ story, index, isMobile }) {
 }
 
 function Main() {
-  useAboutSmoothScroll({ verticalOnly: true });
+  useEnglishMainScroll();
   const sceneRef = useRef(null);
-  useMainIntroAnimation(sceneRef);
+  useMainIntroAnimation(sceneRef, ENGLISH_MAIN_INTRO);
   const newsRevealRef = useRef(null);
   const [isMobileCards, setIsMobileCards] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -121,6 +123,7 @@ function Main() {
     title: "id GALLERY",
   });
   const [mainNews, setMainNews] = useState([]);
+  const newsTimeline = getEnglishNewsTimeline(mainNews.length);
 
   useEffect(() => {
     const media = window.matchMedia(MOBILE_CARD_QUERY);
@@ -197,17 +200,15 @@ function Main() {
       const background = panel.querySelector(".main_story_background img");
       const shade = panel.querySelector(".main_story_shade");
       const cards = [...panel.querySelectorAll(".main_story_card")];
-      const notice = panel.querySelector(".main_story_notice");
-      const scrollIndicator = panel.querySelector(".main_story_scroll");
-      const blurProgress = easeOutCubic(getRangeProgress(progress, 0.1, 0.38));
+      const blurProgress = reducedMotion.matches ? 0 : easeOutCubic(getRangeProgress(progress, 0.1, 0.38));
 
       background.style.filter = `blur(${blurProgress * 12}px) brightness(${1 - blurProgress * 0.42})`;
       background.style.transform = `scale(${1 + blurProgress * 0.04})`;
       shade.style.opacity = String(blurProgress * 0.12);
 
       cards.forEach((card, index) => {
-        const start = 0.24 + index * 0.06;
-        const end = 0.52 + index * 0.045;
+        const start = ENGLISH_MAIN_MOTION.cardStart + index * ENGLISH_MAIN_MOTION.cardStartStagger;
+        const end = ENGLISH_MAIN_MOTION.cardEnd + index * ENGLISH_MAIN_MOTION.cardEndStagger;
         const cardProgress = reducedMotion.matches
           ? progress > start ? 1 : 0
           : easeOutCubic(getRangeProgress(progress, start, end));
@@ -218,8 +219,6 @@ function Main() {
         card.style.transform = `translate3d(0, ${translateY}vh, 0)`;
       });
 
-      /*if (notice) notice.style.opacity = String(1 - getRangeProgress(progress, 0.08, 0.24));
-      scrollIndicator.style.opacity = String(1 - getRangeProgress(progress, 0.08, 0.22));*/
     };
 
     const updateScene = () => {
@@ -229,9 +228,7 @@ function Main() {
       const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
       const scrollRange = Math.max(1, rect.height - viewportHeight);
       const progress = clamp(-rect.top / scrollRange);
-      const contentWeight = 1;
-      const transitionWeight = 0.55;
-      const timelineEnd = 0.98;
+      const { contentWeight, transitionWeight, timelineEnd } = ENGLISH_MAIN_MOTION;
       const totalWeight = panels.length * contentWeight + Math.max(0, panels.length - 1) * transitionWeight;
       let timelineCursor = 0;
 
@@ -250,10 +247,10 @@ function Main() {
         const transitionEnd = ((timelineCursor + transitionWeight) / totalWeight) * timelineEnd;
         const transitionProgress = reducedMotion.matches
           ? progress >= transitionEnd ? 1 : 0
-          : easeOutCubic(getRangeProgress(progress, transitionStart, transitionEnd));
+          : easeInOutCubic(getRangeProgress(progress, transitionStart, transitionEnd));
 
         nextPanel.style.clipPath = `inset(0 0 0 ${100 - transitionProgress * 100}%)`;
-        nextPanel.style.transform = `translate3d(${(1 - transitionProgress) * 18}vw, 0, 0)`;
+        nextPanel.style.transform = `translate3d(${(1 - transitionProgress) * ENGLISH_MAIN_MOTION.panelTravel}vw, 0, 0)`;
         timelineCursor += transitionWeight;
       });
     };
@@ -295,11 +292,7 @@ function Main() {
       const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
       const scrollRange = Math.max(1, rect.height - viewportHeight);
       const sectionProgress = clamp(-rect.top / scrollRange);
-      const ranges = [
-        [0.06, 0.28],
-        [0.37, 0.59],
-        [0.68, 0.9],
-      ];
+      const { ranges } = getEnglishNewsTimeline(panels.length);
 
       panels.forEach((panel, index) => {
         if (panel.classList.contains("main_news_panel_1")) return;
@@ -307,7 +300,7 @@ function Main() {
         const [start, end] = ranges[index];
         const revealProgress = reducedMotion.matches
           ? sectionProgress >= start ? 1 : 0
-          : easeOutCubic(getRangeProgress(sectionProgress, start, end));
+          : easeInOutCubic(getRangeProgress(sectionProgress, start, end));
         const topInset = (1 - revealProgress) * 100;
 
         panel.style.clipPath = `inset(${topInset}% 0% 0% 0%)`;
@@ -337,7 +330,10 @@ function Main() {
   }, [mainNews.length]);
 
   return (
-    <main className="page_main">
+    <main className="page_main page_main--en" lang="en" style={{
+      "--main-story-height": `${(isMobileCards ? ENGLISH_MAIN_MOTION.mobileStoryScreens : ENGLISH_MAIN_MOTION.storyScreens) * 100}svh`,
+      "--main-news-height": `${newsTimeline.heightScreens * 100}svh`,
+    }}>
       <section className="main_story" ref={sceneRef}>
         <div className="main_story_stage">
           {MAIN_STORIES.map((story, index) => (
