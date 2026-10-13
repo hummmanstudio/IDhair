@@ -11,7 +11,7 @@ export const ENGLISH_MAIN_MOTION = {
   cardEndStagger: .06,
   cardTravel: .82,
   cardScale: .97,
-  panelLift: 3,
+  panelSlide: 18,
 };
 
 export const ENGLISH_MAIN_INTRO = {

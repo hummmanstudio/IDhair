@@ -20,15 +20,18 @@ export default function useEnglishMainMotion(sceneRef, newsRef, isMobile, newsCo
       // Retain the accepted reading holds even after the last visible tween ends.
       storyTimeline.to({ value: 0 }, { value: 1, duration: totalWeight, ease: "none" }, 0);
 
-      gsap.set(panels, { clipPath: "none", x: 0, yPercent: 0, scale: 1 });
-      panels.forEach((panel, index) => gsap.set(panel, { autoAlpha: index === 0 ? 1 : 0 }));
+      gsap.set(panels, { autoAlpha: 1, x: 0, yPercent: 0, scale: 1 });
+      panels.forEach((panel, index) => gsap.set(panel, {
+        clipPath: index === 0 ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 0% 100%)",
+        xPercent: index === 0 ? 0 : motion.panelSlide,
+      }));
 
       let cursor = 0;
       panels.forEach((panel, panelIndex) => {
         const background = panel.querySelector(".main_story_background img");
         const shade = panel.querySelector(".main_story_shade");
         const cards = [...panel.querySelectorAll(".main_story_card")];
-        gsap.set(panel.querySelector(".main_story_copy"), { autoAlpha: panelIndex === 0 ? 1 : 0 });
+        gsap.set(panel.querySelector(".main_story_copy"), { autoAlpha: 1 });
 
         gsap.set(background, { filter: "blur(0px) brightness(1)", scale: 1 });
         gsap.set(shade, { opacity: 0 });
@@ -62,25 +65,15 @@ export default function useEnglishMainMotion(sceneRef, newsRef, isMobile, newsCo
         const next = panels[panelIndex + 1];
         if (!next) return;
         if (reduced) {
-          storyTimeline.set(next, { autoAlpha: 1 }, cursor + motion.transitionWeight);
-          storyTimeline.set(next.querySelector(".main_story_copy"), { autoAlpha: 1 }, cursor + motion.transitionWeight);
-          storyTimeline.set(panel, { autoAlpha: 0 }, cursor + motion.transitionWeight);
+          storyTimeline.set(next, { clipPath: "inset(0% 0% 0% 0%)", xPercent: 0 }, cursor + motion.transitionWeight);
         } else {
-          const foreground = [...panel.querySelectorAll(".main_story_cards, .main_story_copy, .main_story_notice")];
-          storyTimeline.fromTo(foreground, { autoAlpha: 1 }, {
-            autoAlpha: 0, duration: motion.transitionWeight * .3, ease: "sine.out", immediateRender: false,
+          // Keep the original horizontal curtain and travel; soften only its pace.
+          storyTimeline.fromTo(next, {
+            clipPath: "inset(0% 0% 0% 100%)", xPercent: motion.panelSlide,
+          }, {
+            clipPath: "inset(0% 0% 0% 0%)", xPercent: 0,
+            duration: motion.transitionWeight, ease: "sine.inOut", immediateRender: false,
           }, cursor);
-          storyTimeline.fromTo(next, { autoAlpha: 0, yPercent: motion.panelLift, scale: 1.015 }, {
-            autoAlpha: 1, yPercent: 0, scale: 1,
-            duration: motion.transitionWeight * .78, ease: "sine.inOut", immediateRender: false,
-          }, cursor + motion.transitionWeight * .22);
-          storyTimeline.fromTo(next.querySelector(".main_story_copy"), { autoAlpha: 0 }, {
-            autoAlpha: 1, duration: motion.transitionWeight * .5, ease: "sine.inOut", immediateRender: false,
-          }, cursor + motion.transitionWeight * .5);
-          // Keep the outgoing scene present until the incoming photograph has arrived.
-          storyTimeline.to(panel, {
-            autoAlpha: 0, duration: motion.transitionWeight * .6, ease: "sine.in",
-          }, cursor + motion.transitionWeight * .4);
         }
         cursor += motion.transitionWeight;
       });
