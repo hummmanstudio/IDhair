@@ -16,6 +16,7 @@ function Header({ salonOpen, setSalonOpen }) {
   const isEnglishPage = /^\/en(?:\/|$)/.test(location.pathname);
   const isEnglishAboutPage = /^\/en\/about\/?$/.test(location.pathname);
   const isEnglishAcademyPage = /^\/en\/academy\/?$/.test(location.pathname);
+  const isEnglishRecruitPage = /^\/en\/recruit\/?$/.test(location.pathname);
   const [mainIntroRevealedKey, setMainIntroRevealedKey] = useState(null);
   const isMainPage = ["/", "/en", "/en/"].includes(location.pathname);
   const mainIntroHidden = isMainPage && mainIntroRevealedKey !== location.key;
@@ -170,7 +171,7 @@ function Header({ salonOpen, setSalonOpen }) {
               </div>
     
               <div className="h_nav_group_4 txt-gray caption-m">
-                {isEnglishAboutPage || isEnglishAcademyPage ? (
+                {isEnglishAboutPage || isEnglishAcademyPage || isEnglishRecruitPage ? (
                   <>6F, Korea Institute of Patent Information Building,<br />
                     11 Yeonhui-ro, Mapo-gu, Seoul, South Korea<br />
                     ID Beauty Co., Ltd.</>

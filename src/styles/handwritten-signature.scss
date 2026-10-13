@@ -1,0 +1,23 @@
+.signature_draw {
+  display: block;
+  height: auto;
+  aspect-ratio: 7899 / 2809;
+  flex-shrink: 0;
+  .signature_stroke { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .signature_complete { opacity: 0; transition: opacity 0s 3.9s; }
+}
+
+.as_text_2.active .signature_draw {
+  .signature_stroke {
+    animation: signature-write var(--stroke-duration) linear forwards;
+    animation-delay: calc(.35s + var(--stroke-delay));
+  }
+  .signature_complete { opacity: 1; }
+}
+
+@keyframes signature-write { to { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .signature_draw .signature_stroke { stroke-dashoffset: 0; animation: none!important; }
+  .signature_draw .signature_complete { opacity: 1; transition: none!important; }
+}

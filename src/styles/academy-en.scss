@@ -1,4 +1,8 @@
 .page_academy--en {
+  @media (min-width: 1025px) {
+    .ac_2 .flex_w .flex .left .img_w > ul { padding-inline: 0; }
+  }
+
   .ac_1 .ac_1_2 article {
     width: min(100%, 920px);
     padding-inline: 24px;

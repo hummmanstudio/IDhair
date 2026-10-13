@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import HandwrittenSignature from "../components/HandwrittenSignature";
 import useAboutIntroAnimation from "../lib/useAboutIntroAnimation";
 import useAboutNumberCounter from "../lib/useAboutNumberCounter";
 import useAboutSmoothScroll from "../lib/useAboutSmoothScroll";
@@ -250,7 +251,7 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Message</h1>
             </div>
             <div className="as_text_2 ani_x">
-              <img className="signiture" src="/img/about_4_sig_2.png" alt="We Woon Me's signature"/>
+              <HandwrittenSignature label="We Woon Me's signature" />
               <ul>
                 <li className="body-m apprael_ani delay-1 ls_s">
                   <strong className="fw-b">Company Name</strong><p>ID Beauty Co., Ltd.</p>

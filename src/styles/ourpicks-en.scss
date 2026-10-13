@@ -1,0 +1,16 @@
+.ourpicks_page--en {
+  .ourpicks_section_title {
+    min-width: 0;
+    align-items: baseline;
+    align-items: last baseline;
+    h2 { font-size: 3.2724vw; flex-shrink: 0; }
+    p { font-size: .9456vw; min-width: 0; line-height: 1.5; word-break: normal; }
+  }
+
+  @media (max-width: 1024px) {
+    .ourpicks_section_head .ourpicks_section_title {
+      h2 { font-size: 8.0004vw; }
+      p { font-size: 3.3336vw; }
+    }
+  }
+}
