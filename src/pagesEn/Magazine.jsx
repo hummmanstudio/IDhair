@@ -19,11 +19,11 @@ import "../styles/ourpicks-en.scss";
 function Magazine() {
   const tabs = [
     { name: "Our PICKS", path: "our-picks", description: ["Discover lifestyle stories through trends<br/>and brand news curated by id HAIR."] },
-    { name: "id EVENT", path: "id-event", description: ["아이디헤어에서 진행하는 다양한 이벤트와 특별한 혜택을 만나볼 수 있는 공간"] },
-    { name: "id FAMILY", path: "id-family", description: ["아이디헤어를 만들어가는 사람들의<br/>진솔한 이야기"] },
-    { name: "id NEWS", path: "id-news", description: ["아이디헤어의 새로운 소식과<br/>주요 이야기를 전하는 뉴스 콘텐츠"] },
-    { name: "id GALLERY", path: "id-gallery", description: ["아이디헤어가 제안하는<br/>시즌별 헤어 트렌드 룩북"] },
-    { name: "id PLAY", path: "id-play", description: ["아이디헤어의 다채로운 순간을<br/>영상 콘텐츠로 만나는 id PLAY"] },
+    { name: "id EVENT", path: "id-event", description: ["Discover id HAIR events and exclusive offers."] },
+    { name: "id FAMILY", path: "id-family", description: ["Real stories from the people behind id HAIR."] },
+    { name: "id NEWS", path: "id-news", description: ["The latest news and key stories from id HAIR."] },
+    { name: "id GALLERY", path: "id-gallery", description: ["Seasonal hair trend lookbooks curated by id HAIR."] },
+    { name: "id PLAY", path: "id-play", description: ["Experience the many moments of id HAIR through video."] },
   ];
 
   const location = useLocation();

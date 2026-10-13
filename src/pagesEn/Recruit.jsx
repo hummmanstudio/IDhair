@@ -13,6 +13,7 @@ const recruitGridImages = Array.from(
 
 function Recruit() {
   const [isNavPopupOpen, setIsNavPopupOpen] = useState(false);
+  const pageRef = useRef(null);
   const progressTrackRef = useRef(null);
   const maskTrackRef = useRef(null);
   const maskOriginRef = useRef(null);
@@ -22,6 +23,19 @@ function Recruit() {
   const gridWrapperRef = useRef(null);
   const gridRef = useRef(null);
   const gridContentRef = useRef(null);
+
+  useEffect(() => {
+    // Preserve the compact landscape layout while expressing text sizing in vw.
+    const updateValueDescriptionSize = () => {
+      pageRef.current?.style.setProperty(
+        "--recruit-wide-description-size",
+        `${1.6668 * window.innerHeight / window.innerWidth}vw`,
+      );
+    };
+    updateValueDescriptionSize();
+    window.addEventListener("resize", updateValueDescriptionSize);
+    return () => window.removeEventListener("resize", updateValueDescriptionSize);
+  }, []);
 
   useEffect(() => {
     const progressTrack = progressTrackRef.current;
@@ -342,7 +356,7 @@ function Recruit() {
   }, []);
 
   return (
-    <main className="page_recruit page_recruit--en" lang="en">
+    <main ref={pageRef} className="page_recruit page_recruit--en" lang="en">
       <section className="rs_head ani">
         <div className="body-s scroll apprael_ani ls_s mob">[ SCROLL ]</div>
         <div className="rs_progress" ref={progressTrackRef}></div>
@@ -439,8 +453,8 @@ function Recruit() {
                 ID FAMILY
               </h2>
               <p className="rs_2_content_description">
-                Our longstanding 'id Familism' culture is a driving force behind id HAIR, strengthening bonds among our people and building trust with our clients.<br/><br/>
-                Through honest success and warmth, we create a culture of shared growth that brings happiness to our colleagues and clients.
+                <span>Our longstanding 'id Familism' culture is a driving force behind id HAIR, strengthening bonds among our people and building trust with our clients.</span>
+                <span>Through honest success and warmth, we create a culture of shared growth that brings happiness to our colleagues and clients.</span>
               </p>
             </div>
             <div className="rs_2_gallery">
@@ -519,7 +533,7 @@ function Recruit() {
             <ol>
               <li>
                 <h4 className="apprael display-xs">01</h4>
-                <span className="body-m fw-sb">Download the application form<br/>from our website</span>
+                <span className="body-m fw-sb">Download the application form from our website</span>
               </li>
 
               <li>
@@ -534,7 +548,7 @@ function Recruit() {
 
               <li>
                 <h4 className="apprael display-xs">04</h4>
-                <span className="body-m fw-sb">Successful applicants are contacted<br/>by phone after the interview</span>
+                <span className="body-m fw-sb">Successful applicants are contacted by phone after the interview</span>
               </li>
 
             </ol>

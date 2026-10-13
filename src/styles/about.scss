@@ -569,8 +569,11 @@
 
 // Keep English copy within the existing About page layout.
 .page_about[lang="en"] {
+  .as_4 .as_4_1 .as_text_2 ul { gap: .64105vw; }
+
   @media (min-width: 1025px) {
     .as_1 .as_text h1.t_m_2 { left: calc(38.6vw - 40px); }
+    .as_1 .as_1_text_2 { bottom: .6vw; }
   }
 
   @media (max-width: 1024px) {
