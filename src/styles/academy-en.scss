@@ -16,14 +16,14 @@
 
   .ac_2 .flex_w .flex {
     .left {
-      .title { margin-bottom: 24px; line-height: 1.5; }
+      .title { margin-bottom: 24px; font-size: 1.1817vw; line-height: 1.5; }
       .img_w {
-        .img { max-height: 30svh; }
+        .img { max-height: 40svh; }
         .img img { object-fit: contain; }
         > ul {
           top: calc(100% + 20px);
           li { gap: 6px; }
-          span { font-size: clamp(11px, .788vw, 13px); line-height: 1.5; word-break: normal; }
+          span { font-size: clamp(13.2px, .9456vw, 15.6px); line-height: 1.5; word-break: normal; }
         }
       }
     }
@@ -37,8 +37,11 @@
   .ac_3 .img_map .img_w li {
     .txt_w {
       width: min(420px, calc(100vw - 40px));
-      .top { flex-wrap: wrap; gap: 4px 12px; }
-      .bottom { white-space: normal; line-height: 1.6; }
+      .top {
+        flex-wrap: wrap; gap: 4px 12px;
+        > span { font-size: .8004vw; }
+      }
+      .bottom { font-size: .9456vw; white-space: normal; line-height: 1.6; }
     }
     &:nth-child(3), &:nth-child(7) {
       .txt_w { left: auto; right: 0; }
@@ -57,11 +60,11 @@
     }
     .ac_2 .flex_w .flex {
       .left {
-        .title { margin-bottom: 16px; font-size: clamp(13px, 3.056vw, 16px); }
+        .title { margin-bottom: 16px; font-size: clamp(16.9px, 3.9728vw, 20.8px); }
         .img_w > ul {
           padding-top: 20px;
           li { font-size: 11px; gap: 6px; }
-          span { font-size: clamp(11px, 2.778vw, 13px); line-height: 1.45; }
+          span { font-size: clamp(13.2px, 3.3336vw, 15.6px); line-height: 1.45; }
         }
       }
       .right li {
@@ -80,8 +83,8 @@
       z-index: 3;
       padding: 20px;
       .top h4 { font-size: 14px; }
-      .top > span { font-size: 11px; }
-      .bottom { margin-top: 12px; font-size: 12px; }
+      .top > span { font-size: 13.2px; }
+      .bottom { margin-top: 12px; font-size: 14.4px; }
     }
     .ac_3 .img_map .img_w li:nth-child(n) .txt_w {
       left: 20px; right: 20px; top: auto; bottom: 24px;
