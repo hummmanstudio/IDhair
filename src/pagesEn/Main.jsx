@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import TransitionLink from "../components/TransitionLink";
 import MainNotice from "../components/MainNotice";
 import useEnglishMainScroll from "../lib/useEnglishMainScroll";
+import useEnglishMainMotion from "../lib/useEnglishMainMotion";
 import useMainIntroAnimation from "../lib/useMainIntroAnimation";
-import { ENGLISH_MAIN_MOTION, ENGLISH_MAIN_INTRO, easeInOutCubic, getEnglishNewsTimeline } from "../lib/englishMainMotion";
+import { ENGLISH_MAIN_MOTION, ENGLISH_MAIN_INTRO, getEnglishNewsTimeline } from "../lib/englishMainMotion";
 import {
   fetchGalleryPosts,
   fetchNewsPosts,
@@ -39,12 +40,6 @@ const MAIN_STORIES = [
   },
 ];
 
-const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-
-const getRangeProgress = (progress, start, end) =>
-  clamp((progress - start) / Math.max(0.001, end - start));
-
-const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
 const MOBILE_CARD_QUERY = "(max-width: 1024px)";
 
 function MainStoryPanel({ story, index, isMobile }) {
@@ -124,6 +119,7 @@ function Main() {
   });
   const [mainNews, setMainNews] = useState([]);
   const newsTimeline = getEnglishNewsTimeline(mainNews.length);
+  useEnglishMainMotion(sceneRef, newsRevealRef, isMobileCards, mainNews.length);
 
   useEffect(() => {
     const media = window.matchMedia(MOBILE_CARD_QUERY);
@@ -186,148 +182,6 @@ function Main() {
       isMounted = false;
     };
   }, []);
-
-  useEffect(() => {
-    const scene = sceneRef.current;
-
-    if (!scene) return undefined;
-
-    const panels = [...scene.querySelectorAll(".main_story_panel")];
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let frameId = null;
-
-    const updatePanel = (panel, progress) => {
-      const background = panel.querySelector(".main_story_background img");
-      const shade = panel.querySelector(".main_story_shade");
-      const cards = [...panel.querySelectorAll(".main_story_card")];
-      const blurProgress = reducedMotion.matches ? 0 : easeOutCubic(getRangeProgress(progress, 0.1, 0.38));
-
-      background.style.filter = `blur(${blurProgress * 12}px) brightness(${1 - blurProgress * 0.42})`;
-      background.style.transform = `scale(${1 + blurProgress * 0.04})`;
-      shade.style.opacity = String(blurProgress * 0.12);
-
-      cards.forEach((card, index) => {
-        const start = ENGLISH_MAIN_MOTION.cardStart + index * ENGLISH_MAIN_MOTION.cardStartStagger;
-        const end = ENGLISH_MAIN_MOTION.cardEnd + index * ENGLISH_MAIN_MOTION.cardEndStagger;
-        const cardProgress = reducedMotion.matches
-          ? progress > start ? 1 : 0
-          : easeOutCubic(getRangeProgress(progress, start, end));
-        const direction = Number(card.dataset.direction) || 1;
-        const translateY = direction * 112 * (1 - cardProgress);
-
-        card.style.opacity = String(getRangeProgress(cardProgress, 0, 0.14));
-        card.style.transform = `translate3d(0, ${translateY}vh, 0)`;
-      });
-
-    };
-
-    const updateScene = () => {
-      frameId = null;
-
-      const rect = scene.getBoundingClientRect();
-      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
-      const scrollRange = Math.max(1, rect.height - viewportHeight);
-      const progress = clamp(-rect.top / scrollRange);
-      const { contentWeight, transitionWeight, timelineEnd } = ENGLISH_MAIN_MOTION;
-      const totalWeight = panels.length * contentWeight + Math.max(0, panels.length - 1) * transitionWeight;
-      let timelineCursor = 0;
-
-      panels.forEach((panel, index) => {
-        const contentStart = (timelineCursor / totalWeight) * timelineEnd;
-        const contentEnd = ((timelineCursor + contentWeight) / totalWeight) * timelineEnd;
-        const panelProgress = getRangeProgress(progress, contentStart, contentEnd);
-
-        updatePanel(panel, panelProgress);
-        timelineCursor += contentWeight;
-
-        const nextPanel = panels[index + 1];
-        if (!nextPanel) return;
-
-        const transitionStart = (timelineCursor / totalWeight) * timelineEnd;
-        const transitionEnd = ((timelineCursor + transitionWeight) / totalWeight) * timelineEnd;
-        const transitionProgress = reducedMotion.matches
-          ? progress >= transitionEnd ? 1 : 0
-          : easeInOutCubic(getRangeProgress(progress, transitionStart, transitionEnd));
-
-        nextPanel.style.clipPath = `inset(0 0 0 ${100 - transitionProgress * 100}%)`;
-        nextPanel.style.transform = `translate3d(${(1 - transitionProgress) * ENGLISH_MAIN_MOTION.panelTravel}vw, 0, 0)`;
-        timelineCursor += transitionWeight;
-      });
-    };
-
-    const requestSceneUpdate = () => {
-      if (frameId !== null) return;
-      frameId = window.requestAnimationFrame(updateScene);
-    };
-
-    updateScene();
-    window.addEventListener("scroll", requestSceneUpdate, { passive: true });
-    window.addEventListener("resize", requestSceneUpdate);
-    window.visualViewport?.addEventListener("resize", requestSceneUpdate);
-    reducedMotion.addEventListener("change", requestSceneUpdate);
-
-    return () => {
-      window.removeEventListener("scroll", requestSceneUpdate);
-      window.removeEventListener("resize", requestSceneUpdate);
-      window.visualViewport?.removeEventListener("resize", requestSceneUpdate);
-      reducedMotion.removeEventListener("change", requestSceneUpdate);
-
-      if (frameId !== null) window.cancelAnimationFrame(frameId);
-    };
-  }, [isMobileCards]);
-
-  useEffect(() => {
-    const section = newsRevealRef.current;
-
-    if (!section) return undefined;
-
-    const panels = [...section.querySelectorAll(".main_news_panel")];
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let frameId = null;
-
-    const updateNewsReveal = () => {
-      frameId = null;
-
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
-      const scrollRange = Math.max(1, rect.height - viewportHeight);
-      const sectionProgress = clamp(-rect.top / scrollRange);
-      const { ranges } = getEnglishNewsTimeline(panels.length);
-
-      panels.forEach((panel, index) => {
-        if (panel.classList.contains("main_news_panel_1")) return;
-
-        const [start, end] = ranges[index];
-        const revealProgress = reducedMotion.matches
-          ? sectionProgress >= start ? 1 : 0
-          : easeInOutCubic(getRangeProgress(sectionProgress, start, end));
-        const topInset = (1 - revealProgress) * 100;
-
-        panel.style.clipPath = `inset(${topInset}% 0% 0% 0%)`;
-      });
-
-    };
-
-    const requestNewsUpdate = () => {
-      if (frameId !== null) return;
-      frameId = window.requestAnimationFrame(updateNewsReveal);
-    };
-
-    updateNewsReveal();
-    window.addEventListener("scroll", requestNewsUpdate, { passive: true });
-    window.addEventListener("resize", requestNewsUpdate);
-    window.visualViewport?.addEventListener("resize", requestNewsUpdate);
-    reducedMotion.addEventListener("change", requestNewsUpdate);
-
-    return () => {
-      window.removeEventListener("scroll", requestNewsUpdate);
-      window.removeEventListener("resize", requestNewsUpdate);
-      window.visualViewport?.removeEventListener("resize", requestNewsUpdate);
-      reducedMotion.removeEventListener("change", requestNewsUpdate);
-
-      if (frameId !== null) window.cancelAnimationFrame(frameId);
-    };
-  }, [mainNews.length]);
 
   return (
     <main className="page_main page_main--en" lang="en" style={{

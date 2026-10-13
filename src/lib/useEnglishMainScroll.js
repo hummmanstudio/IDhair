@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { easeOutQuart } from "./englishMainMotion";
+import { easeOutSine } from "./englishMainMotion";
 
 export default function useEnglishMainScroll() {
   useEffect(() => {
@@ -13,8 +13,8 @@ export default function useEnglishMainScroll() {
       smoothWheel: lenis.options.smoothWheel,
     };
     const update = () => {
-      lenis.options.duration = .95;
-      lenis.options.easing = easeOutQuart;
+      lenis.options.duration = 1.35;
+      lenis.options.easing = easeOutSine;
       lenis.options.smoothWheel = !motion.matches;
     };
 

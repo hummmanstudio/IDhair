@@ -9,21 +9,19 @@ export const ENGLISH_MAIN_MOTION = {
   cardStartStagger: .055,
   cardEnd: .72,
   cardEndStagger: .06,
-  panelTravel: 12,
+  cardTravel: .82,
+  cardScale: .97,
+  panelLift: 3,
 };
 
 export const ENGLISH_MAIN_INTRO = {
-  scaleDuration: 1400,
-  revealDuration: 850,
-  openDelay: 800,
-  scaleEasing: "cubic-bezier(0.22, 1, 0.36, 1)",
+  scaleDuration: 1850,
+  revealDuration: 1050,
+  openDelay: 1050,
+  scaleEasing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
 };
 
-export const easeInOutCubic = (t) => t < .5
-  ? 4 * t * t * t
-  : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-export const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+export const easeOutSine = (t) => Math.sin(t * Math.PI / 2);
 
 export function getEnglishNewsTimeline(count) {
   // One article needs a short reading hold, rather than three articles' runway.
