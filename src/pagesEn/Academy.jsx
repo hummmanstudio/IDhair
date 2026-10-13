@@ -473,7 +473,7 @@ function Academy() {
                 </div>
                 <ul>
                   <li>
-                    <span>id HAIR Education Director and representative of the Ewha Womans University Station Branch</span>
+                    <span>id HAIR Education Director</span>
                     <span>Creator and developer of id HAIR’s Style Work training program</span>
                     <span>Lead director of Korea’s largest hair shows, The Show and Super Live</span>
                     <span>First Korean representative to serve as lead director of the Midosuji Collection in Osaka, Japan</span>

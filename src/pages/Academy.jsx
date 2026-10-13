@@ -472,7 +472,7 @@ function Academy() {
                 </div>
                 <ul>
                   <li>
-                    <span>id HAIR 교육총괄이사 &amp; 이대역점 대표</span>
+                    <span>id HAIR 교육총괄이사</span>
                     <span>아이디헤어 교육프로그램 ‘스타일워크’ 기획·개발 및 창시</span>
                     <span>대한민국 최대 헤어쇼 ‘The Show’ / ‘Super Live’ 메인 디렉터</span>
                     <span>일본 오사카 ‘미도스지 컬렉션’ 대한민국 최초 대표 메인 디렉터</span>
