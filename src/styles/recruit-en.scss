@@ -1,5 +1,9 @@
 .page_recruit--en {
-  .rs_head .down_p .sticky_w > ul > li:first-child > span { font-size: .9456vw; }
+  .rs_head .down_p .sticky_w > ul > li > span {
+    font-size: .9456vw;
+    text-align: center;
+    text-wrap: balance;
+  }
 
   .rs_2 .rs_2_content .rs_2_content_description {
     width: 736px;
@@ -43,13 +47,13 @@
   }
 
   @media (max-width: 1024px) {
-    .rs_head .down_p .sticky_w > ul > li:first-child > span { font-size: 3.3336vw; }
+    .rs_head .down_p .sticky_w > ul > li > span { font-size: 3.3336vw; }
     .rs_2 .rs_2_content .rs_2_content_description { max-width: 88.889vw; }
     .rs_3 .process_w .right ol li span { white-space: normal; text-wrap: balance; }
   }
 
   @media (max-width: 1024px) and (min-aspect-ratio: 510/820) {
-    .rs_head .down_p .sticky_w > ul > li:first-child > span {
+    .rs_head .down_p .sticky_w > ul > li > span {
       font-size: var(--recruit-wide-description-size, .75vw);
     }
   }
