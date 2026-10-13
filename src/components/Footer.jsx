@@ -7,8 +7,6 @@ import "../styles/footer.scss";
 function Footer({ onOpenSalon }) {
   const location = useLocation();
   const isEnglishPage = /^\/en(?:\/|$)/.test(location.pathname);
-  const hasEnglishCompanyDetails = /^\/en\/(?:about|academy)\/?$/.test(location.pathname);
-  const isEnglishAcademyPage = /^\/en\/academy\/?$/.test(location.pathname);
   const footerRef = useRef(null);
   useFooterViewportClass(footerRef, location.pathname);
 
@@ -94,16 +92,12 @@ function Footer({ onOpenSalon }) {
     
                   <li>
                     <div><h4>Phone</h4></div>
-                    <div><span>{hasEnglishCompanyDetails ? "+82 2 2039 3301 | 10am - 5pm" : "+82 2 2039 3301 ㅣ 10am - 5pm"}</span></div>
+                    <div><span>+82 2 2039 3301 | 10am - 5pm</span></div>
                   </li>
     
                   <li>
                     <div><h4>Address</h4></div>
-                    <div><span>{hasEnglishCompanyDetails
-                      ? isEnglishAcademyPage
-                        ? <>ID Beauty Co., Ltd., 6F and part of 3F, Korea Technology Promotion Institute Building,<br/>11 Yeonhui-ro, Mapo-gu, Seoul, South Korea</>
-                        : "ID Beauty Co., Ltd., 6F and part of 3F, Korea Technology Promotion Institute Building, 11 Yeonhui-ro, Mapo-gu, Seoul, South Korea"
-                      : "서울특별시 마포구 연희로 11 한국기술진흥원 6층, 3층 일부 ㈜아이디뷰티"}</span></div>
+                    <div><span>ID Beauty Co., Ltd., 6F and part of 3F, Korea Technology Promotion Institute Building,<br/>11 Yeonhui-ro, Mapo-gu, Seoul, South Korea</span></div>
                   </li>
     
                   <small className="body-m">

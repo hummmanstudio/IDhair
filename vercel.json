@@ -28,6 +28,7 @@
     { "source": "/en/about", "destination": "/en/about/index.html" },
     { "source": "/academy", "destination": "/academy/index.html" },
     { "source": "/recruit", "destination": "/recruit/index.html" },
+    { "source": "/en/recruit", "destination": "/en/recruit/index.html" },
     { "source": "/magazine", "destination": "/magazine/index.html" },
     { "source": "/magazine/our-picks", "destination": "/magazine/our-picks/index.html" },
     { "source": "/magazine/id-news", "destination": "/magazine/id-news/index.html" },

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/recruit.scss";
+import "../styles/recruit-en.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -341,7 +342,7 @@ function Recruit() {
   }, []);
 
   return (
-    <main className="page_recruit">
+    <main className="page_recruit page_recruit--en" lang="en">
       <section className="rs_head ani">
         <div className="body-s scroll apprael_ani ls_s mob">[ SCROLL ]</div>
         <div className="rs_progress" ref={progressTrackRef}></div>
@@ -351,7 +352,7 @@ function Recruit() {
           <div className="body-s scroll apprael_ani ls_s pc">[ SCROLL ]</div>
         </div>
         <div className="middle ani">
-          <span className="body-l fw-sb apprael_ani ls_s">idHAIR와 함께 성장할 인재를 찾습니다.</span>
+          <span className="body-l fw-sb apprael_ani ls_s">We are looking for talented people to grow with id HAIR.</span>
           <div className="title_b txt-ac apprael_ani delay-2 gt_all">
             <span className="display-m">let&#39;s</span>
             <img src="/img/recruit_cross.svg"/>
@@ -400,8 +401,8 @@ function Recruit() {
                 /> */    }           
                 <img src="/img/rs_1_1.svg" alt="" />
                 <h1 className="display-xs gt fw-r">honest</h1>
-                <b className="body-s fw-sb">( 정직함 )</b>
-                <span className="body-s fw-r">공정한 노력을 통한 정직한 성공</span>
+                <b className="body-s fw-sb">( Honesty )</b>
+                <span className="body-s fw-r">Honest success through fair effort</span>
               </li>
 
               <li>
@@ -412,8 +413,8 @@ function Recruit() {
                 <img src="/img/rs_1_2.svg" alt="" />
                 
                 <h1 className="display-xs gt fw-r">warmth</h1>
-                <b className="body-s fw-sb">( 따뜻함 )</b>
-                <span className="body-s fw-r">모두를 가족처럼 대하는 따뜻한 마음</span>
+                <b className="body-s fw-sb">( Warmth )</b>
+                <span className="body-s fw-r">A warm heart that treats everyone like family</span>
               </li>
 
               <li>
@@ -422,8 +423,8 @@ function Recruit() {
                 </div>
                 <img src="/img/rs_1_3.svg" alt="" />
                 <h1 className="display-xs gt fw-r">integrity</h1>
-                <b className="body-s fw-sb">( 성숙함 )</b>
-                <span className="body-s fw-r">선한 영향력을 줄 수 있는 성숙한 태도</span>
+                <b className="body-s fw-sb">( Maturity )</b>
+                <span className="body-s fw-r">A mature attitude that makes a positive difference</span>
               </li>
             </ul>
           </div>
@@ -438,8 +439,8 @@ function Recruit() {
                 ID FAMILY
               </h2>
               <p className="rs_2_content_description">
-                오랜 시간 이어온 'id 패밀리즘'은 구성원의 유대와 고객의<br/> 신뢰를 쌓아온 아이디헤어의 가장 강력한 원동력입니다.<br/><br/>
-                정직한 성공과 따뜻한 마음을 바탕으로 동료와 고객 모두가<br/> 행복한 진정한 동반 성장의 문화를 만들어갑니다.
+                Our longstanding 'id Familism' culture is a driving force behind id HAIR, strengthening bonds among our people and building trust with our clients.<br/><br/>
+                Through honest success and warmth, we create a culture of shared growth that brings happiness to our colleagues and clients.
               </p>
             </div>
             <div className="rs_2_gallery">
@@ -460,49 +461,49 @@ function Recruit() {
       </section>
       <section className="rs_3 txt-white">
         <div className="top b-b b-dash b-delay-4 ani">
-          <b className="head-m fw-b apprael_ani">직무소개</b>
+          <b className="head-m fw-b apprael_ani">Our Roles</b>
           <h1 className="display-m apprael apprael_ani">Job Description</h1>
         </div>
         <ul className="rs_3_2 b-b b-dash ani b-delay-6">
           <li className="b-l apprael_ani ls_s rs_3_2_1">
-            <span className="body-s">(디자이너)</span>
+            <span className="body-s">( Designer )</span>
             <h4 className="display-xs apprael">Designer</h4>
             <p className="body-m">
-              매장·고객·동료에게 행복을 전해주고,<br/>함께 성장하는 스타 디자이너
+              A star stylist who brings happiness to the salon, clients and colleagues while growing together
             </p>
             <ul>
-              <li>대/내외 스타 디자이너 초청 특강</li>
-              <li>직급별/매출별 성장여행</li>
-              <li>하이퍼포머 특별 해외연수</li>
-              <li>개별 디자이너 매출 성장 코칭</li>
+              <li>Masterclasses with leading stylists from id HAIR and beyond</li>
+              <li>Development trips tailored to role and sales performance</li>
+              <li>Special overseas training for top performers</li>
+              <li>Individual coaching to help stylists grow their sales</li>
             </ul>
           </li>
 
           <li className="b-l b-delay-2 apprael_ani ls_s delay-2 rs_3_2_2">
-            <span className="body-s">(관리자)</span>
+            <span className="body-s">( Administrator )</span>
             <h4 className="display-xs apprael">Administrator</h4>
             <p className="body-m">
-              매장을 관리/운영하며,<br/>함께하는 동료들을 성공으로 이끄는 경영자
+              A leader who manages salon operations and guides colleagues toward success
             </p>
             <ul>
-              <li>대/내외 경영 리더십 교육</li>
-              <li>멘토 코칭 교육</li>
-              <li>전체 경영회의 참석</li>
+              <li>Management and leadership training with internal and external experts</li>
+              <li>Mentoring and coaching training</li>
+              <li>Participation in company-wide management meetings</li>
             </ul>
           </li>
 
           <li className="b-l b-delay-4 apprael_ani ls_s delay-4 rs_3_2_3">
-            <span className="body-s">(파트너)</span>
+            <span className="body-s">( Partner )</span>
             <h4 className="display-xs apprael">Partner</h4>
             <p className="body-m">
-              함께 성공하고자 하는 동료이자<br/>헤어디자이너를 준비하는 예비 스타 디자이너
+              A teammate committed to shared success and an aspiring star stylist preparing for a career in hair design
             </p>
             <ul>
-              <li>사내 아카데미 보유</li>
-              <li>전 매장 기숙사 보유</li>
-              <li>입사 시, 일대일 멘토 지정</li>
-              <li>각종 이벤트 데이</li>
-              <li>최고의 기술력을 전해주는 스타일워크 교육</li>
+              <li>In-house academy</li>
+              <li>Dormitories at all salons</li>
+              <li>A dedicated mentor when you join</li>
+              <li>A variety of team event days</li>
+              <li>Style Work training that develops outstanding technical skills</li>
             </ul>
           </li>
           
@@ -510,30 +511,30 @@ function Recruit() {
         </ul>
         <div className="b-b b-dash b-delay-4 process_w ani">
           <div className="left apprael_ani ls_s">
-            <span className="body-s">(채용절차)</span>
+            <span className="body-s">( Recruitment )</span>
             <h1 className="apprael display-xs">Hiring Process</h1>
-            <p className="body-m">상시 채용</p>
+            <p className="body-m">Applications accepted year-round</p>
           </div>
           <div className="right">
             <ol>
               <li>
                 <h4 className="apprael display-xs">01</h4>
-                <span className="body-m fw-sb">홈페이지 내<br/>입사 지원서 다운로드</span>
+                <span className="body-m fw-sb">Download the application form<br/>from our website</span>
               </li>
 
               <li>
                 <h4 className="apprael display-xs">02</h4>
-                <span className="body-m fw-sb">입사지원서 작성</span>
+                <span className="body-m fw-sb">Complete the application form</span>
               </li>
 
               <li>
                 <h4 className="apprael display-xs">03</h4>
-                <span className="body-m fw-sb">메일로 지원서 제출</span>
+                <span className="body-m fw-sb">Submit your application by email</span>
               </li>
 
               <li>
                 <h4 className="apprael display-xs">04</h4>
-                <span className="body-m fw-sb">면접 후 합격자<br/>개별 유선 연락</span>
+                <span className="body-m fw-sb">Successful applicants are contacted<br/>by phone after the interview</span>
               </li>
 
             </ol>
@@ -551,7 +552,7 @@ function Recruit() {
             <span>Instagram</span>
             <h4>idhair_hello</h4>
           </div>
-          <a download href="/file/idhair_resume.hwp" className="rs_nav_2 txt-ac">입사지원서 <br className="mob"/>다운로드</a>
+          <a download href="/file/idhair_resume.hwp" className="rs_nav_2 txt-ac">Download <br className="mob"/>Application Form</a>
           <div
             className={`rs_nav_3${isNavPopupOpen ? " active" : ""}`}
             role="button"
@@ -565,25 +566,25 @@ function Recruit() {
               }
             }}
           >
-            자주 하는 <br className="mob"/>질문
+            FAQ
           </div>
           <div className={`rs_nav_popup_w${isNavPopupOpen ? " show" : ""}`}>
             <div className="rs_nav_popup" data-lenis-prevent>
-              <h1>자주하는 질문</h1>
-              <b>면접은 어떻게 진행되나요?</b>
-              <span>면접은 일반적으로 서류 심사 후 개별 연락을 통해 일정 및 장소가 조율됩니다. 면접 시에는 본인의 개성을 살릴 수 있는 복장과 자신감 있는 태도를 준비해 오시면 됩니다.</span>
-              <b>매장은 어디로 배정되나요?</b>
-              <span>각 매장의 필요 인원과 지원자 개인의 성향과 희망 매장을 서로 조율하여 최종 근무지가 결정됩니다. 아이디헤어에서는 여러분이 가장 잘 성장하고 즐겁게 일할 수 있는 매장을 찾기 위해 성향 매칭 시스템을 운영 중입니다.</span>
-              <b>결과는 언제쯤 알 수 있을까요?</b>
-              <span>면접 후 일주일 이내 개별 통보됩니다.</span>
-              <b>나이/성별 제한 있나요?</b>
-              <span>아이디헤어는 미용에 열정을 가진 모든 인재를 환영합니다. (법적 근무가 가능한 만 19세 이상)</span>
-              <b>기숙사를 사용할 수 있나요?</b>
-              <span>아이디헤어의 대부분 매장은 기숙사를 보유 중이며, 파트너 직급의 직원들은 해당 시설을 저렴한 가격으로 이용 가능합니다.</span>
-              <b>필수 자격조건이 있나요?</b>
-              <span>미용사 면허증(또는 자격증) 소지자들은 디자이너/파트너 직군 근무가 가능합니다. 관리자 직군은 서비스 마인드를 가진 인재들이면 누구나 입사 지원 가능합니다.</span>
-              <b>승급 기간은 얼마나 되나요?</b>
-              <span>아이디 아카데미 입학 후 약 2년간의 교육을 이수하면 디자이너로 활동할 수 있는 디플로마가 수여됩니다.</span>
+              <h1>Frequently Asked Questions</h1>
+              <b>How are interviews conducted?</b>
+              <span>After reviewing your application, we usually contact you individually to arrange the interview time and location. Wear an outfit that expresses your personality and bring a confident attitude.</span>
+              <b>Which salon will I be assigned to?</b>
+              <span>Your placement is decided by considering each salon’s staffing needs, your personal qualities and your preferred location. id HAIR uses a matching system to help you find a salon where you can grow and enjoy your work.</span>
+              <b>When will I hear the result?</b>
+              <span>You will be notified individually within one week of your interview.</span>
+              <b>Are there any age or gender restrictions?</b>
+              <span>id HAIR welcomes everyone with a passion for hair and beauty. Applicants must be aged 19 or older and legally eligible to work.</span>
+              <b>Can I use a dormitory?</b>
+              <span>Most id HAIR salons have dormitories, which employees in Partner roles can use at an affordable rate.</span>
+              <b>What qualifications are required?</b>
+              <span>Applicants with a hairdressing license or qualification can work in Designer or Partner roles. Anyone with a service-oriented mindset may apply for an Administrator role.</span>
+              <b>How long does it take to become a Designer?</b>
+              <span>After completing approximately two years of training at id Academy, you receive a diploma that qualifies you to work as a Designer.</span>
             </div>
             <div
               className="rs_nav_close body-s"

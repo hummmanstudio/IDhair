@@ -25,6 +25,12 @@ export const defaultPageMetadata = {
 };
 
 export const localizedPageMetadata = {
+  '/en/recruit': {
+    title: 'RECRUIT | id HAIR',
+    description: 'Grow with id HAIR. Explore our roles, training opportunities, hiring process and recruitment FAQs.',
+    siteName: 'id HAIR',
+    language: 'en',
+  },
   '/en/academy': {
     title: 'id ACADEMY | id HAIR',
     description: 'Discover id HAIR Academy’s professional hair education, hands-on curriculum, expert instructors and student stories.',

@@ -14,10 +14,11 @@ import { getItemsPerPage, getTotalPages, magazinePageSettings } from "./magazine
 import { fetchMagazinePostCount, getPostTypeForCategory } from "../lib/sanityNewsEn";
 import "../styles/magazine.scss";
 import "../styles/ourpicks.scss";
+import "../styles/ourpicks-en.scss";
 
 function Magazine() {
   const tabs = [
-    { name: "Our PICKS", path: "our-picks", description: ["id HAIR가 큐레이션한 트렌드, 브랜드 소식을 통해<br/>라이프스타일을 담은 이야기를 전합니다."] },
+    { name: "Our PICKS", path: "our-picks", description: ["Discover lifestyle stories through trends<br/>and brand news curated by id HAIR."] },
     { name: "id EVENT", path: "id-event", description: ["아이디헤어에서 진행하는 다양한 이벤트와 특별한 혜택을 만나볼 수 있는 공간"] },
     { name: "id FAMILY", path: "id-family", description: ["아이디헤어를 만들어가는 사람들의<br/>진솔한 이야기"] },
     { name: "id NEWS", path: "id-news", description: ["아이디헤어의 새로운 소식과<br/>주요 이야기를 전하는 뉴스 콘텐츠"] },
