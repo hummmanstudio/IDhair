@@ -7,7 +7,7 @@ const sanityQueryUrl = sanityProjectId
 const regionLabels = {
   seoul: "서울",
   gyeonggi: "경기",
-  local: "지방",
+  local: "전국",
   atelier: "아틀리에",
 };
 

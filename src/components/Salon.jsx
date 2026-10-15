@@ -8,7 +8,7 @@ import "../styles/Salon.scss";
 const defaultSalonRegions = [
   { id: "seoul", name: "서울", stores: [] },
   { id: "gyeonggi", name: "경기", stores: [] },
-  { id: "local", name: "지방", stores: [] },
+  { id: "local", name: "전국", stores: [] },
   { id: "atelier", name: "아틀리에", stores: [] },
 ];
 
@@ -29,7 +29,7 @@ const naverMapDefaultUrl = `https://map.naver.com/p/search/${encodeURIComponent(
 
 const salonCopy = {
   ko: {
-    regions: { seoul: "서울", gyeonggi: "경기", local: "지방", atelier: "아틀리에" },
+    regions: { seoul: "서울", gyeonggi: "경기", local: "전국", atelier: "아틀리에" },
     search: "주소 or 지점명 검색",
     searchLabel: "매장 검색",
     close: "살롱 닫기",
