@@ -77,7 +77,7 @@ function Footer({ onOpenSalon }) {
                     <li><button type="button" className="footer_salon_btn" onClick={onOpenSalon}>SALON</button></li>
                     <li><TransitionLink to="/en/magazine">id MAGAZINE</TransitionLink></li>
                     <li><TransitionLink to="/en/academy">id ACADEMY</TransitionLink></li>
-                    <li><TransitionLink to="/en/recruit">RECRUIT</TransitionLink></li>
+                    <li><TransitionLink to="/en/careers">CAREERS</TransitionLink></li>
                 </ul>
                 <div className="icon_w">
                     <a target="_blank" href="https://www.instagram.com/idhair.official"><img src="/img/icon_instagram.svg"/></a>
@@ -101,7 +101,7 @@ function Footer({ onOpenSalon }) {
                   </li>
     
                   <small className="body-m">
-                  <div className="footer_copyright">idHAIR © 2026</div>
+                  <div className="footer_copyright">id HAIR © 2026</div>
                   <div>Website made by <a style={{textDecoration: "underline"}} href="https://hummman.com/" target="_blank">hummman</a></div>
                   </small>
                 </ol>
@@ -116,7 +116,7 @@ function Footer({ onOpenSalon }) {
                     <li><button type="button" className="footer_salon_btn" onClick={onOpenSalon}>SALON</button></li>
                     <li><TransitionLink to="/magazine">id MAGAZINE</TransitionLink></li>
                     <li><TransitionLink to="/academy">id ACADEMY</TransitionLink></li>
-                    <li><TransitionLink to="/recruit">RECRUIT</TransitionLink></li>
+                    <li><TransitionLink to="/careers">CAREERS</TransitionLink></li>
                 </ul>
                 <div className="icon_w">
                     <a target="_blank" href="https://www.instagram.com/idhair.official"><img src="/img/icon_instagram.svg"/></a>

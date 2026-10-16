@@ -16,7 +16,7 @@ function Header({ salonOpen, setSalonOpen }) {
   const isEnglishPage = /^\/en(?:\/|$)/.test(location.pathname);
   const isEnglishAboutPage = /^\/en\/about\/?$/.test(location.pathname);
   const isEnglishAcademyPage = /^\/en\/academy\/?$/.test(location.pathname);
-  const isEnglishRecruitPage = /^\/en\/recruit\/?$/.test(location.pathname);
+  const isEnglishCareersPage = /^\/en\/careers\/?$/.test(location.pathname);
   const [mainIntroRevealedKey, setMainIntroRevealedKey] = useState(null);
   const isMainPage = ["/", "/en", "/en/"].includes(location.pathname);
   const mainIntroHidden = isMainPage && mainIntroRevealedKey !== location.key;
@@ -94,7 +94,7 @@ function Header({ salonOpen, setSalonOpen }) {
             <TransitionLink to="/en/about"><span>ABOUT id HAIR</span></TransitionLink>
             <TransitionLink to="/en/academy"><span>id ACADEMY</span></TransitionLink>
             <TransitionLink to="/en/magazine"><span>id MAGAZINE</span></TransitionLink>
-            <TransitionLink to="/en/recruit"><span>RECRUIT</span></TransitionLink>
+            <TransitionLink to="/en/careers"><span>CAREERS</span></TransitionLink>
           </div>
           
           <div className="header_inner test">
@@ -150,7 +150,7 @@ function Header({ salonOpen, setSalonOpen }) {
                 <div className="mob menu_line"></div>
                 <TransitionLink to="/en/about" onClick={() => setNavOpen(false)}>About id HAIR</TransitionLink>
                 <TransitionLink to="/en/academy" onClick={() => setNavOpen(false)}>id Academy</TransitionLink>
-                <TransitionLink to="/en/recruit" onClick={() => setNavOpen(false)}>Recruit</TransitionLink>
+                <TransitionLink to="/en/careers" onClick={() => setNavOpen(false)}>Careers</TransitionLink>
                 <div className="mob menu_line"></div>
               </div>
     
@@ -171,7 +171,7 @@ function Header({ salonOpen, setSalonOpen }) {
               </div>
     
               <div className="h_nav_group_4 txt-gray caption-m">
-                {isEnglishAboutPage || isEnglishAcademyPage || isEnglishRecruitPage ? (
+                {isEnglishAboutPage || isEnglishAcademyPage || isEnglishCareersPage ? (
                   <>6F, Korea Institute of Patent Information Building,<br />
                     11 Yeonhui-ro, Mapo-gu, Seoul, South Korea<br />
                     ID Beauty Co., Ltd.</>
@@ -195,7 +195,7 @@ function Header({ salonOpen, setSalonOpen }) {
             <TransitionLink to="/about"><span>ABOUT id HAIR</span></TransitionLink>
             <TransitionLink to="/academy"><span>id ACADEMY</span></TransitionLink>
             <TransitionLink to="/magazine"><span>id MAGAZINE</span></TransitionLink>
-            <TransitionLink to="/recruit"><span>RECRUIT</span></TransitionLink>
+            <TransitionLink to="/careers"><span>CAREERS</span></TransitionLink>
           </div>
           
           <div className="header_inner test">
@@ -251,7 +251,7 @@ function Header({ salonOpen, setSalonOpen }) {
                 <div className="mob menu_line"></div>
                 <TransitionLink to="/about" onClick={() => setNavOpen(false)}>About id HAIR</TransitionLink>
                 <TransitionLink to="/academy" onClick={() => setNavOpen(false)}>id Academy</TransitionLink>
-                <TransitionLink to="/recruit" onClick={() => setNavOpen(false)}>Recruit</TransitionLink>
+                <TransitionLink to="/careers" onClick={() => setNavOpen(false)}>Careers</TransitionLink>
                 <div className="mob menu_line"></div>
               </div>
     

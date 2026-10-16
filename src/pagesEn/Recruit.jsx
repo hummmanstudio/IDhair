@@ -361,7 +361,7 @@ function Recruit() {
         <div className="body-s scroll apprael_ani ls_s mob">[ SCROLL ]</div>
         <div className="rs_progress" ref={progressTrackRef}></div>
         <div className="rc_title b-t b-2">
-          <h1 className="display-l apprael  apprael_all apprael_ani" >RECRUIT</h1>
+          <h1 className="display-l apprael  apprael_all apprael_ani" >CAREERS</h1>
           <div className="b-b b-delay-0"></div>
           <div className="body-s scroll apprael_ani ls_s pc">[ SCROLL ]</div>
         </div>
@@ -396,9 +396,9 @@ function Recruit() {
         <div className="down_p" ref={downPageRef}>
           <div className="sticky_w ani float">
             <div className="rolling apprael_all display-m">
-              <h1 className="display-m">MY idENTITY  MY idHAIR  </h1>
-              <h1 className="display-m">MY idENTITY  MY idHAIR  </h1>
-              <h1 className="display-m">MY idENTITY  MY idHAIR  </h1>
+              <h1 className="display-m">MY idENTITY  MY id HAIR  </h1>
+              <h1 className="display-m">MY idENTITY  MY id HAIR  </h1>
+              <h1 className="display-m">MY idENTITY  MY id HAIR  </h1>
             </div>
 
             <ul className="">
@@ -464,7 +464,7 @@ function Recruit() {
                     <img
                       className="rs_2_grid_image"
                       src={src}
-                      alt={`idHAIR recruit ${index + 1}`}
+                      alt={`id HAIR careers ${index + 1}`}
                     />
                   </li>
                 ))}
@@ -480,10 +480,10 @@ function Recruit() {
         </div>
         <ul className="rs_3_2 b-b b-dash ani b-delay-6">
           <li className="b-l apprael_ani ls_s rs_3_2_1">
-            <span className="body-s">( Designer )</span>
-            <h4 className="display-xs apprael">Designer</h4>
+            <span className="body-s">01</span>
+            <h4 className="display-xs apprael">Hairstylist</h4>
             <p className="body-m">
-              A star stylist who brings happiness to the salon, clients and colleagues while growing together
+              A collaborative partner driven by shared success, and a future star stylist in the making
             </p>
             <ul>
               <li>Masterclasses with leading stylists from id HAIR and beyond</li>
@@ -494,7 +494,7 @@ function Recruit() {
           </li>
 
           <li className="b-l b-delay-2 apprael_ani ls_s delay-2 rs_3_2_2">
-            <span className="body-s">( Administrator )</span>
+            <span className="body-s">02</span>
             <h4 className="display-xs apprael">Administrator</h4>
             <p className="body-m">
               A leader who manages salon operations and guides colleagues toward success
@@ -507,10 +507,10 @@ function Recruit() {
           </li>
 
           <li className="b-l b-delay-4 apprael_ani ls_s delay-4 rs_3_2_3">
-            <span className="body-s">( Partner )</span>
+            <span className="body-s">03</span>
             <h4 className="display-xs apprael">Partner</h4>
             <p className="body-m">
-              A teammate committed to shared success and an aspiring star stylist preparing for a career in hair design
+              Future Star Stylist: a partner in shared success, training to become a hairstylist
             </p>
             <ul>
               <li>In-house academy</li>
@@ -527,7 +527,7 @@ function Recruit() {
           <div className="left apprael_ani ls_s">
             <span className="body-s">( Recruitment )</span>
             <h1 className="apprael display-xs">Hiring Process</h1>
-            <p className="body-m">Applications accepted year-round</p>
+            <p className="body-m">Open Year-Round</p>
           </div>
           <div className="right">
             <ol>
@@ -596,9 +596,9 @@ function Recruit() {
               <b>Can I use a dormitory?</b>
               <span>Most id HAIR salons have dormitories, which employees in Partner roles can use at an affordable rate.</span>
               <b>What qualifications are required?</b>
-              <span>Applicants with a hairdressing license or qualification can work in Designer or Partner roles. Anyone with a service-oriented mindset may apply for an Administrator role.</span>
-              <b>How long does it take to become a Designer?</b>
-              <span>After completing approximately two years of training at id Academy, you receive a diploma that qualifies you to work as a Designer.</span>
+              <span>Applicants with a hairdressing license or qualification can work in Hairstylist or Partner roles. Anyone with a service-oriented mindset may apply for an Administrator role.</span>
+              <b>How long does it take to become a Hairstylist?</b>
+              <span>After completing approximately two years of training at id Academy, you receive a diploma that qualifies you to work as a Hairstylist.</span>
             </div>
             <div
               className="rs_nav_close body-s"
