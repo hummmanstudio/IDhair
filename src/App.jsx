@@ -25,13 +25,19 @@ import LenisProvider from "./lib/Lenis";
 
 const AdminStudio = lazy(() => import("./pages/AdminStudio"));
 
+function LegacyRecruitRedirect({ to }) {
+  const { search, hash } = useLocation();
+  return <Navigate to={`${to}${search}${hash}`} replace />;
+}
+
 const siteRoutes = (
   <>
     <Route path="/" element={<Main />} />
     <Route path="/en" element={<MainEn />} />
     <Route path="/en/about" element={<AboutEn />} />
     <Route path="/en/academy" element={<AcademyEn />} />
-    <Route path="/en/recruit" element={<RecruitEn />} />
+    <Route path="/en/careers" element={<RecruitEn />} />
+    <Route path="/en/recruit" element={<LegacyRecruitRedirect to="/en/careers" />} />
     <Route path="/en/magazine" element={<Navigate to="/en/magazine/our-picks" replace />} />
     <Route path="/en/magazine/:category" element={<MagazineEn />} />
     <Route path="/en/magazine/:category/post/:id" element={<MagazinePostEn />} />
@@ -39,7 +45,8 @@ const siteRoutes = (
     <Route path="/en/magazine-post" element={<MagazinePostEn />} />
     <Route path="/about" element={<About />} />
     <Route path="/academy" element={<Academy />} />
-    <Route path="/recruit" element={<Recruit />} />
+    <Route path="/careers" element={<Recruit />} />
+    <Route path="/recruit" element={<LegacyRecruitRedirect to="/careers" />} />
     <Route path="/magazine" element={<Navigate to="/magazine/our-picks" replace />} />
     <Route path="/magazine/:category" element={<Magazine />} />
     <Route path="/magazine/:category/post/:id" element={<MagazineDetail />} />

@@ -361,7 +361,7 @@ function Recruit() {
         <div className="body-s scroll apprael_ani ls_s mob">[ SCROLL ]</div>
         <div className="rs_progress" ref={progressTrackRef}></div>
         <div className="rc_title b-t b-2">
-          <h1 className="display-l apprael  apprael_all apprael_ani" >RECRUIT</h1>
+          <h1 className="display-l apprael  apprael_all apprael_ani" >CAREERS</h1>
           <div className="b-b b-delay-0"></div>
           <div className="body-s scroll apprael_ani ls_s pc">[ SCROLL ]</div>
         </div>
@@ -464,7 +464,7 @@ function Recruit() {
                     <img
                       className="rs_2_grid_image"
                       src={src}
-                      alt={`id HAIR recruit ${index + 1}`}
+                      alt={`id HAIR careers ${index + 1}`}
                     />
                   </li>
                 ))}

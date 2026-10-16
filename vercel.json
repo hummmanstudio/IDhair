@@ -21,14 +21,18 @@
       "statusCode": 301
     },
     { "source": "/bbs/(.*)", "destination": "/", "statusCode": 301 },
-    { "source": "/file/2021recurit.doc", "destination": "/recruit", "statusCode": 301 }
+    { "source": "/recruit", "destination": "/careers", "statusCode": 301 },
+    { "source": "/recruit/(.*)", "destination": "/careers", "statusCode": 301 },
+    { "source": "/en/recruit", "destination": "/en/careers", "statusCode": 301 },
+    { "source": "/en/recruit/(.*)", "destination": "/en/careers", "statusCode": 301 },
+    { "source": "/file/2021recurit.doc", "destination": "/careers", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/en/about", "destination": "/en/about/index.html" },
     { "source": "/academy", "destination": "/academy/index.html" },
-    { "source": "/recruit", "destination": "/recruit/index.html" },
-    { "source": "/en/recruit", "destination": "/en/recruit/index.html" },
+    { "source": "/careers", "destination": "/careers/index.html" },
+    { "source": "/en/careers", "destination": "/en/careers/index.html" },
     { "source": "/magazine", "destination": "/magazine/index.html" },
     { "source": "/magazine/our-picks", "destination": "/magazine/our-picks/index.html" },
     { "source": "/magazine/id-news", "destination": "/magazine/id-news/index.html" },

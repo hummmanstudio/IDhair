@@ -3,7 +3,7 @@ export const pageTitles = {
   '/en': 'id HAIR | 아이디헤어',
   '/about': 'ABOUT id HAIR | 아이디헤어',
   '/academy': 'id ACADEMY | 아이디헤어',
-  '/recruit': 'RECRUIT | 아이디헤어',
+  '/careers': 'CAREERS | 아이디헤어',
   '/salon': 'SALON | 아이디헤어',
   '/magazine': 'id MAGAZINE | 아이디헤어',
   '/magazine/our-picks': 'id MAGAZINE | 아이디헤어',
@@ -25,8 +25,8 @@ export const defaultPageMetadata = {
 };
 
 export const localizedPageMetadata = {
-  '/en/recruit': {
-    title: 'RECRUIT | id HAIR',
+  '/en/careers': {
+    title: 'CAREERS | id HAIR',
     description: 'Grow with id HAIR. Explore our roles, training opportunities, hiring process and recruitment FAQs.',
     siteName: 'id HAIR',
     language: 'en',
