@@ -374,14 +374,14 @@ function Academy() {
         </div>
         <div className="ac_1_2">
           <article className="body-m txt-white ani">
-            <h1 className="head-l apprael_ani ls_s delay-1">An original training program,<br/>online and in person</h1>
+            <h1 className="head-l apprael_ani ls_s delay-1">A Proprietary Education Program Bridging,<br/>Online &amp; Offline Learning</h1>
             <span className="mg apprael_ani ls_s delay-2">
-              The id STYLE WORK diploma is the hair industry’s first structured hair-technique program.
-              Students earn formal certification after completing 56 hair designs over two years and four months.
+              The id STYLE WORK Diploma is the first systematic hair training program in the beauty industry.
+              Students earn official certification after completing 56 hair works over 2 years and 4 months.
             </span>
             <span className="apprael_ani ls_s delay-3">
-              Our online platform, seezier, offers training in the latest salon styles.
-              We also offer id skill mastery, a tailored program that develops hands-on skills in each salon.
+              Through our online platform, &lt;seezier&gt;, they can learn the latest salon styles,
+              while id skill mastery, a customized program at each salon, builds hands-on, real-world skills.
             </span>
           </article>
         </div>
@@ -402,7 +402,7 @@ function Academy() {
                 <div className="l_b">
                   <b>/ Style Work</b>
                   <span>
-                    id HAIR’s signature haircutting system covers 56 styles tailored to hair texture, head shape and face shape. Across 14 stages over two years and four months, students progress from foundational skills to advanced applications.
+                    id HAIR’s signature haircutting system covers 56 styles tailored to hair texture, head shape and facial features. Across 14 stages over two years and four months, students progress from foundational skills to advanced applications.
                   </span>
                 </div>
               </li>
@@ -477,7 +477,7 @@ function Academy() {
                     <span>Creator and developer of id HAIR’s Style Work training program</span>
                     <span>Lead director of Korea’s largest hair shows, The Show and Super Live</span>
                     <span>First Korean representative to serve as lead director of the Midosuji Collection in Osaka, Japan</span>
-                    <span>Attended Vidal Sassoon London masterclasses for 10 consecutive years between 2011 and 2022</span>
+                    <span>Attended the Vidal Sassoon London Masterclasses for 10 consecutive years from 2011 to 2022</span>
                   </li>
                   <li>
                     <span>Oversees the operation of id HAIR Academy</span>
@@ -495,13 +495,13 @@ function Academy() {
                   <li>
                     <span>Teaches Style Work haircutting courses</span>
                     <span>Strengthens salon partners’ foundational skills and practical techniques</span>
-                    <span>Runs haircutting programs and supports salon partners’ professional growth</span>
+                    <span>Leads haircutting programs and supports salon partners’ professional growth</span>
                   </li>
                   <li>
                     <span>Core-team instructor and academy operations manager at Osong Academy</span>
                     <span>Provides communication and training support for salons outside Seoul and Gyeonggi</span>
                     <span>Teaches the full Style Work curriculum at Hongdae and Osong Academies</span>
-                    <span>Runs practical training on minimizing client complaints</span>
+                    <span>Leads practical training on minimizing client complaints</span>
                   </li>
                   <li>
                     <span>Teaches Style Work haircutting techniques and design</span>

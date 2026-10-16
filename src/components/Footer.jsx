@@ -101,7 +101,7 @@ function Footer({ onOpenSalon }) {
                   </li>
     
                   <small className="body-m">
-                  <div className="footer_copyright">idHAIR © 2026</div>
+                  <div className="footer_copyright">id HAIR © 2026</div>
                   <div>Website made by <a style={{textDecoration: "underline"}} href="https://hummman.com/" target="_blank">hummman</a></div>
                   </small>
                 </ol>

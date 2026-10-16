@@ -142,7 +142,7 @@ function About() {
       <div className="about_intro ">
         <div className="mob_wrap">
           <div className="b-t b-4 b-c-white ani" data-about-intro-ani></div>
-          <h1 className="display-l fw-l"><span className="apprael">ABOUT <br className="mob"/>ID HAIR</span></h1>
+          <h1 className="display-l fw-l"><span className="apprael">About <br className="mob"/>id HAIR</span></h1>
           <div className="b-t b-1 b-c-white dotted ani" data-about-intro-ani></div>
         </div>
         <div className="years_w head-m fw-sb">
@@ -230,9 +230,9 @@ function About() {
               <h1 className="t_m_1 t_1 txt-ac fw-r neulis  mob_ani me_1">mission</h1>
               <span className="body-m t_2  t_m_2">( b )</span>
               <div className="body-m as_text_1 t_m_3">
-                <span className="apprael_ani ls_s delay-1">Beyond the art of hair design, we are 'happiness stylists'</span>
-                <span className="apprael_ani ls_s delay-2">who bring meaningful joy to our clients' lives.</span>
-                <span className="apprael_ani ls_s delay-3">Together, we achieve success and make dreams come true.</span>
+                <span className="apprael_ani ls_s delay-1">More than just hairstyling—as a 'Happiness Stylist' </span>
+                <span className="apprael_ani ls_s delay-2">bringing true joy to our clients' lives, we thrive </span>
+                <span className="apprael_ani ls_s delay-3">and achieve our dreams together with everyone.</span>
               </div>
             </div>
           </div>
@@ -254,10 +254,10 @@ function About() {
               <HandwrittenSignature label="We Woon Me's signature" />
               <ul>
                 <li className="body-m apprael_ani delay-1 ls_s">
-                  <strong className="fw-b">Company Name</strong><p>ID Beauty Co., Ltd.</p>
+                  <strong className="fw-b">Company</strong><p>ID Beauty Co., Ltd.</p>
                 </li>
                 <li className="body-m apprael_ani delay-2 ls_s">
-                  <strong className="fw-b">Establishment Date</strong><p>First salon opened in 1988</p>
+                  <strong className="fw-b">Founded</strong><p>1988 (First salon opened)</p>
                 </li>
                 <li className="body-m apprael_ani delay-3 ls_s">
                   <strong className="fw-b">Founder</strong><p>We Woon Me</p>
@@ -272,8 +272,9 @@ function About() {
           <div className="as_4_2 t_m_w">
             <h1 className="display-l fw-l t_m_2 apprael mob_ani ani_x me_1 number_count">1988</h1>
             <div className="body-m as_text_1 t_m_1 ani_x">
-              <span className="apprael_ani ls_s delay-1">Founded in 1988 by two stylists at a small salon called 'Miss Parma',</span>
-              <span className="apprael_ani ls_s delay-2">id HAIR has grown into one of South Korea's leading professional hair brands.</span>
+              <span className="apprael_ani ls_s delay-1">id HAIR began in 1988 as a small salon called “Miss Perm,” </span>
+              <span className="apprael_ani ls_s delay-2">with two stylists and a simple beginning. Today, </span>
+              <span className="apprael_ani ls_s delay-3">it is one of Korea’s leading professional hair brands.</span>
             </div>
           </div>
 
@@ -287,16 +288,16 @@ function About() {
 
 
             <div className="body-m as_text_1 t_m_1 ani_x pc">
-              <span className="apprael_ani ls_s delay-1">For 39 years, we have gone beyond technical expertise</span>
-              <span className="apprael_ani ls_s delay-2">to become 'happiness stylists' who design happiness for our clients.</span>
-              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission to 'succeed together',</span>
-              <span className="apprael_ani ls_s delay-3">we continue our journey in beauty with clients, colleagues and society.</span>
+              <span className="apprael_ani ls_s delay-1">For 39 years, we have been more than skilled technicians. </span>
+              <span className="apprael_ani ls_s delay-2">We are “Happiness Stylists” who design happiness for every customer. </span>
+              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission of “succeeding together,” we will continue </span>
+              <span className="apprael_ani ls_s delay-3">this journey of beauty alongside our customers, our colleagues, and our community.</span>
             </div>
             <div className="body-m as_text_1 t_m_1 ani_x mob">
-              <span className="apprael_ani ls_s delay-1">For 39 years, we have gone beyond technical expertise</span>
-              <span className="apprael_ani ls_s delay-2">to become 'happiness stylists' who design happiness for our clients.</span>
-              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission to 'succeed together',</span>
-              <span className="apprael_ani ls_s delay-3">we continue our journey in beauty with clients, colleagues and society.</span>
+              <span className="apprael_ani ls_s delay-1">For 39 years, we have been more than skilled technicians. </span>
+              <span className="apprael_ani ls_s delay-2">We are “Happiness Stylists” who design happiness for every customer. </span>
+              <span className="apprael_ani ls_s delay-3">Guided by our enduring mission of “succeeding together,” we will continue </span>
+              <span className="apprael_ani ls_s delay-3">this journey of beauty alongside our customers, our colleagues, and our community.</span>
             </div>
             
           </div>
@@ -342,8 +343,8 @@ function About() {
               <h1 className="as_title fw-r t_m_2 me_2">Brand</h1>
             </div>
             <div className="body-m as_text_2 t_m_3 ani_x">
-              <span className="apprael_ani ls_s delay-1">We strategically expand our brand portfolio to meet<br/>diverse market needs</span>
-              <span className="apprael_ani ls_s delay-2">and strengthen our position in the market.</span>
+              <span className="apprael_ani ls_s delay-1">To meet diverse market needs, we are strategically expanding </span>
+              <span className="apprael_ani ls_s delay-2">our brand portfolio and strengthening our position as a market leader.</span>
             </div>
           </div>
           <div className="as_7_2 t_m_w">

@@ -39,9 +39,14 @@ const getSalonImageUrl = (image) => {
 const localizedText = (store, field, language) =>
   (language === "en" && store[`${field}En`]?.trim()) || store[field] || "";
 
+const localizedSalonName = (store, language) => {
+  const name = localizedText(store, "name", language) || "매장명 없음";
+  return language === "en" ? name.replace(/\bidHAIR\b/g, "id HAIR") : name;
+};
+
 const toStore = (store, language) => ({
   id: store._id,
-  name: localizedText(store, "name", language) || "매장명 없음",
+  name: localizedSalonName(store, language),
   address: localizedText(store, "address", language),
   phone: store.phone || "",
   hours: localizedText(store, "hours", language),
